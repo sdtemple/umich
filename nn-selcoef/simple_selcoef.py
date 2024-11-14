@@ -1,3 +1,5 @@
+# These are the essential simulation functions from isweep
+# github.com/sdtemple/isweep 
 
 import numpy as np
 from scipy.stats import binom
