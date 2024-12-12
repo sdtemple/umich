@@ -1,0 +1,4 @@
+yaml: 'ready-player.yaml'
+folder: 'ready-player'
+num_players: '2'
+character: 'Player'

@@ -1,0 +1,4 @@
+yaml: 'squid-game.yaml'
+folder: 'squid-game'
+num_players: '2'
+character: 'Squid'

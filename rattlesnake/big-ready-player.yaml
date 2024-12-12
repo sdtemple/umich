@@ -1,0 +1,4 @@
+yaml: 'big-ready-player.yaml'
+folder: 'big-ready-player'
+num_players: '10'
+character: 'Player'
