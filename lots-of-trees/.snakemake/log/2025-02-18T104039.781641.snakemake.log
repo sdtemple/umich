@@ -1,0 +1,2836 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+access_tree          13
+all                   1
+gzip_tree_vcf        46
+subset_lcr_vcf       50
+tabix_tree_vcf       47
+tree_to_vcf          31
+total               188
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:42 2025]
+localrule subset_lcr_vcf:
+    input: data/1/3/lcr.vcf.gz, data/1/3/intervals.tsv, data/1/3/lcr.vcf.gz.tbi
+    output: data/1/3/center.vcf.gz
+    jobid: 43
+    reason: Missing output files: data/1/3/center.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:42 2025]
+Finished job 43.
+1 of 188 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:42 2025]
+localrule tree_to_vcf:
+    input: data/8/4/lcr.trees
+    output: data/8/4/lcr.vcf
+    jobid: 232
+    reason: Missing output files: data/8/4/lcr.vcf
+    wildcards: folder=data, sim_id=8, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:43 2025]
+Finished job 232.
+2 of 188 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:43 2025]
+localrule access_tree:
+    input: data/8/simulated.trees, data/8/3/init.txt
+    output: data/8/3/center.tree.pkl, data/8/3/left.tree.pkl, data/8/3/right.tree.pkl, data/8/3/lcr.trees, data/8/3/intervals.tsv
+    jobid: 228
+    reason: Missing output files: data/8/3/intervals.tsv, data/8/3/lcr.trees
+    wildcards: folder=data, sim_id=8, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:44 2025]
+Finished job 228.
+3 of 188 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:44 2025]
+localrule access_tree:
+    input: data/6/simulated.trees, data/6/0/init.txt
+    output: data/6/0/center.tree.pkl, data/6/0/left.tree.pkl, data/6/0/right.tree.pkl, data/6/0/lcr.trees, data/6/0/intervals.tsv
+    jobid: 160
+    reason: Missing output files: data/6/0/intervals.tsv, data/6/0/lcr.trees
+    wildcards: folder=data, sim_id=6, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:45 2025]
+Finished job 160.
+4 of 188 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:45 2025]
+localrule access_tree:
+    input: data/2/simulated.trees, data/2/2/init.txt
+    output: data/2/2/center.tree.pkl, data/2/2/left.tree.pkl, data/2/2/right.tree.pkl, data/2/2/lcr.trees, data/2/2/intervals.tsv
+    jobid: 67
+    reason: Missing output files: data/2/2/intervals.tsv, data/2/2/lcr.trees
+    wildcards: folder=data, sim_id=2, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:45 2025]
+Finished job 67.
+5 of 188 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:45 2025]
+localrule tree_to_vcf:
+    input: data/7/4/lcr.trees
+    output: data/7/4/lcr.vcf
+    jobid: 206
+    reason: Missing output files: data/7/4/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:46 2025]
+Finished job 206.
+6 of 188 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:46 2025]
+localrule access_tree:
+    input: data/9/simulated.trees, data/9/3/init.txt
+    output: data/9/3/center.tree.pkl, data/9/3/left.tree.pkl, data/9/3/right.tree.pkl, data/9/3/lcr.trees, data/9/3/intervals.tsv
+    jobid: 254
+    reason: Missing output files: data/9/3/intervals.tsv, data/9/3/lcr.trees
+    wildcards: folder=data, sim_id=9, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:46 2025]
+Finished job 254.
+7 of 188 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:46 2025]
+localrule access_tree:
+    input: data/7/simulated.trees, data/7/0/init.txt
+    output: data/7/0/center.tree.pkl, data/7/0/left.tree.pkl, data/7/0/right.tree.pkl, data/7/0/lcr.trees, data/7/0/intervals.tsv
+    jobid: 186
+    reason: Missing output files: data/7/0/intervals.tsv, data/7/0/lcr.trees
+    wildcards: folder=data, sim_id=7, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:47 2025]
+Finished job 186.
+8 of 188 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:47 2025]
+localrule gzip_tree_vcf:
+    input: data/4/2/lcr.vcf
+    output: data/4/2/lcr.vcf.gz
+    jobid: 117
+    reason: Missing output files: data/4/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:47 2025]
+Finished job 117.
+9 of 188 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:47 2025]
+localrule tree_to_vcf:
+    input: data/5/1/lcr.trees
+    output: data/5/1/lcr.vcf
+    jobid: 139
+    reason: Missing output files: data/5/1/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:48 2025]
+Finished job 139.
+10 of 188 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:48 2025]
+localrule tree_to_vcf:
+    input: data/2/3/lcr.trees
+    output: data/2/3/lcr.vcf
+    jobid: 71
+    reason: Missing output files: data/2/3/lcr.vcf
+    wildcards: folder=data, sim_id=2, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:48 2025]
+Finished job 71.
+11 of 188 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:48 2025]
+localrule access_tree:
+    input: data/3/simulated.trees, data/3/2/init.txt
+    output: data/3/2/center.tree.pkl, data/3/2/left.tree.pkl, data/3/2/right.tree.pkl, data/3/2/lcr.trees, data/3/2/intervals.tsv
+    jobid: 93
+    reason: Missing output files: data/3/2/intervals.tsv, data/3/2/lcr.trees
+    wildcards: folder=data, sim_id=3, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:49 2025]
+Finished job 93.
+12 of 188 steps (6%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:49 2025]
+localrule gzip_tree_vcf:
+    input: data/8/0/lcr.vcf
+    output: data/8/0/lcr.vcf.gz
+    jobid: 210
+    reason: Missing output files: data/8/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:49 2025]
+Finished job 210.
+13 of 188 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:49 2025]
+localrule tree_to_vcf:
+    input: data/0/0/lcr.trees
+    output: data/0/0/lcr.vcf
+    jobid: 3
+    reason: Missing output files: data/0/0/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:49 2025]
+Finished job 3.
+14 of 188 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:49 2025]
+localrule access_tree:
+    input: data/0/simulated.trees, data/0/2/init.txt
+    output: data/0/2/center.tree.pkl, data/0/2/left.tree.pkl, data/0/2/right.tree.pkl, data/0/2/lcr.trees, data/0/2/intervals.tsv
+    jobid: 15
+    reason: Missing output files: data/0/2/intervals.tsv, data/0/2/lcr.trees
+    wildcards: folder=data, sim_id=0, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:50 2025]
+Finished job 15.
+15 of 188 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:50 2025]
+localrule access_tree:
+    input: data/0/simulated.trees, data/0/4/init.txt
+    output: data/0/4/center.tree.pkl, data/0/4/left.tree.pkl, data/0/4/right.tree.pkl, data/0/4/lcr.trees, data/0/4/intervals.tsv
+    jobid: 25
+    reason: Missing output files: data/0/4/intervals.tsv, data/0/4/lcr.trees
+    wildcards: folder=data, sim_id=0, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:51 2025]
+Finished job 25.
+16 of 188 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:51 2025]
+localrule tabix_tree_vcf:
+    input: data/3/3/lcr.vcf.gz
+    output: data/3/3/lcr.vcf.gz.tbi
+    jobid: 99
+    reason: Missing output files: data/3/3/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:51 2025]
+Finished job 99.
+17 of 188 steps (9%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:51 2025]
+localrule subset_lcr_vcf:
+    input: data/3/3/lcr.vcf.gz, data/3/3/intervals.tsv, data/3/3/lcr.vcf.gz.tbi
+    output: data/3/3/center.vcf.gz
+    jobid: 95
+    reason: Missing output files: data/3/3/center.vcf.gz; Input files updated by another job: data/3/3/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:51 2025]
+Finished job 95.
+18 of 188 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:51 2025]
+localrule tree_to_vcf:
+    input: data/9/3/lcr.trees
+    output: data/9/3/lcr.vcf
+    jobid: 253
+    reason: Missing output files: data/9/3/lcr.vcf; Input files updated by another job: data/9/3/lcr.trees
+    wildcards: folder=data, sim_id=9, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 253.
+19 of 188 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule tabix_tree_vcf:
+    input: data/4/2/lcr.vcf.gz
+    output: data/4/2/lcr.vcf.gz.tbi
+    jobid: 120
+    reason: Missing output files: data/4/2/lcr.vcf.gz.tbi; Input files updated by another job: data/4/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 120.
+20 of 188 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule gzip_tree_vcf:
+    input: data/5/1/lcr.vcf
+    output: data/5/1/lcr.vcf.gz
+    jobid: 138
+    reason: Missing output files: data/5/1/lcr.vcf.gz; Input files updated by another job: data/5/1/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 138.
+21 of 188 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule gzip_tree_vcf:
+    input: data/8/4/lcr.vcf
+    output: data/8/4/lcr.vcf.gz
+    jobid: 231
+    reason: Missing output files: data/8/4/lcr.vcf.gz; Input files updated by another job: data/8/4/lcr.vcf
+    wildcards: folder=data, sim_id=8, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 231.
+22 of 188 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule gzip_tree_vcf:
+    input: data/2/3/lcr.vcf
+    output: data/2/3/lcr.vcf.gz
+    jobid: 70
+    reason: Missing output files: data/2/3/lcr.vcf.gz; Input files updated by another job: data/2/3/lcr.vcf
+    wildcards: folder=data, sim_id=2, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 70.
+23 of 188 steps (12%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule tree_to_vcf:
+    input: data/3/2/lcr.trees
+    output: data/3/2/lcr.vcf
+    jobid: 92
+    reason: Missing output files: data/3/2/lcr.vcf; Input files updated by another job: data/3/2/lcr.trees
+    wildcards: folder=data, sim_id=3, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 92.
+24 of 188 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule gzip_tree_vcf:
+    input: data/0/0/lcr.vcf
+    output: data/0/0/lcr.vcf.gz
+    jobid: 2
+    reason: Missing output files: data/0/0/lcr.vcf.gz; Input files updated by another job: data/0/0/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:52 2025]
+Finished job 2.
+25 of 188 steps (13%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:52 2025]
+localrule tree_to_vcf:
+    input: data/6/0/lcr.trees
+    output: data/6/0/lcr.vcf
+    jobid: 159
+    reason: Missing output files: data/6/0/lcr.vcf; Input files updated by another job: data/6/0/lcr.trees
+    wildcards: folder=data, sim_id=6, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:53 2025]
+Finished job 159.
+26 of 188 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:53 2025]
+localrule tree_to_vcf:
+    input: data/2/2/lcr.trees
+    output: data/2/2/lcr.vcf
+    jobid: 66
+    reason: Missing output files: data/2/2/lcr.vcf; Input files updated by another job: data/2/2/lcr.trees
+    wildcards: folder=data, sim_id=2, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:53 2025]
+Finished job 66.
+27 of 188 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:53 2025]
+localrule gzip_tree_vcf:
+    input: data/7/4/lcr.vcf
+    output: data/7/4/lcr.vcf.gz
+    jobid: 205
+    reason: Missing output files: data/7/4/lcr.vcf.gz; Input files updated by another job: data/7/4/lcr.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=7, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:53 2025]
+Finished job 205.
+28 of 188 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:53 2025]
+localrule tree_to_vcf:
+    input: data/8/3/lcr.trees
+    output: data/8/3/lcr.vcf
+    jobid: 227
+    reason: Missing output files: data/8/3/lcr.vcf; Input files updated by another job: data/8/3/lcr.trees
+    wildcards: folder=data, sim_id=8, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:53 2025]
+Finished job 227.
+29 of 188 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:53 2025]
+localrule tree_to_vcf:
+    input: data/5/0/lcr.trees
+    output: data/5/0/lcr.vcf
+    jobid: 133
+    reason: Missing output files: data/5/0/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 133.
+30 of 188 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule gzip_tree_vcf:
+    input: data/0/3/lcr.vcf
+    output: data/0/3/lcr.vcf.gz
+    jobid: 18
+    reason: Missing output files: data/0/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 18.
+31 of 188 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule gzip_tree_vcf:
+    input: data/6/4/lcr.vcf
+    output: data/6/4/lcr.vcf.gz
+    jobid: 179
+    reason: Missing output files: data/6/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 179.
+32 of 188 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule tree_to_vcf:
+    input: data/7/3/lcr.trees
+    output: data/7/3/lcr.vcf
+    jobid: 201
+    reason: Missing output files: data/7/3/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 201.
+33 of 188 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule gzip_tree_vcf:
+    input: data/3/1/lcr.vcf
+    output: data/3/1/lcr.vcf.gz
+    jobid: 86
+    reason: Missing output files: data/3/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 86.
+34 of 188 steps (18%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule gzip_tree_vcf:
+    input: data/9/2/lcr.vcf
+    output: data/9/2/lcr.vcf.gz
+    jobid: 247
+    reason: Missing output files: data/9/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 247.
+35 of 188 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule subset_lcr_vcf:
+    input: data/4/1/lcr.vcf.gz, data/4/1/intervals.tsv, data/4/1/lcr.vcf.gz.tbi
+    output: data/4/1/center.vcf.gz
+    jobid: 111
+    reason: Missing output files: data/4/1/center.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:54 2025]
+Finished job 111.
+36 of 188 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:54 2025]
+localrule tree_to_vcf:
+    input: data/0/2/lcr.trees
+    output: data/0/2/lcr.vcf
+    jobid: 14
+    reason: Missing output files: data/0/2/lcr.vcf; Input files updated by another job: data/0/2/lcr.trees
+    wildcards: folder=data, sim_id=0, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 14.
+37 of 188 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule gzip_tree_vcf:
+    input: data/2/1/lcr.vcf
+    output: data/2/1/lcr.vcf.gz
+    jobid: 60
+    reason: Missing output files: data/2/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 60.
+38 of 188 steps (20%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule gzip_tree_vcf:
+    input: data/8/2/lcr.vcf
+    output: data/8/2/lcr.vcf.gz
+    jobid: 221
+    reason: Missing output files: data/8/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 221.
+39 of 188 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule tree_to_vcf:
+    input: data/4/0/lcr.trees
+    output: data/4/0/lcr.vcf
+    jobid: 107
+    reason: Missing output files: data/4/0/lcr.vcf
+    wildcards: folder=data, sim_id=4, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 107.
+40 of 188 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule gzip_tree_vcf:
+    input: data/9/0/lcr.vcf
+    output: data/9/0/lcr.vcf.gz
+    jobid: 236
+    reason: Missing output files: data/9/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 236.
+41 of 188 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule tabix_tree_vcf:
+    input: data/8/0/lcr.vcf.gz
+    output: data/8/0/lcr.vcf.gz.tbi
+    jobid: 214
+    reason: Missing output files: data/8/0/lcr.vcf.gz.tbi; Input files updated by another job: data/8/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:55 2025]
+Finished job 214.
+42 of 188 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:55 2025]
+localrule subset_lcr_vcf:
+    input: data/8/0/lcr.vcf.gz, data/8/0/intervals.tsv, data/8/0/lcr.vcf.gz.tbi
+    output: data/8/0/center.vcf.gz
+    jobid: 209
+    reason: Missing output files: data/8/0/center.vcf.gz; Input files updated by another job: data/8/0/lcr.vcf.gz.tbi, data/8/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 209.
+43 of 188 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule gzip_tree_vcf:
+    input: data/9/1/lcr.vcf
+    output: data/9/1/lcr.vcf.gz
+    jobid: 242
+    reason: Missing output files: data/9/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 242.
+44 of 188 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule tree_to_vcf:
+    input: data/7/2/lcr.trees
+    output: data/7/2/lcr.vcf
+    jobid: 196
+    reason: Missing output files: data/7/2/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 196.
+45 of 188 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule tabix_tree_vcf:
+    input: data/9/2/lcr.vcf.gz
+    output: data/9/2/lcr.vcf.gz.tbi
+    jobid: 250
+    reason: Missing output files: data/9/2/lcr.vcf.gz.tbi; Input files updated by another job: data/9/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 250.
+46 of 188 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule tabix_tree_vcf:
+    input: data/3/1/lcr.vcf.gz
+    output: data/3/1/lcr.vcf.gz.tbi
+    jobid: 89
+    reason: Missing output files: data/3/1/lcr.vcf.gz.tbi; Input files updated by another job: data/3/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 89.
+47 of 188 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule tabix_tree_vcf:
+    input: data/0/3/lcr.vcf.gz
+    output: data/0/3/lcr.vcf.gz.tbi
+    jobid: 21
+    reason: Missing output files: data/0/3/lcr.vcf.gz.tbi; Input files updated by another job: data/0/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:56 2025]
+Finished job 21.
+48 of 188 steps (26%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:56 2025]
+localrule tree_to_vcf:
+    input: data/5/4/lcr.trees
+    output: data/5/4/lcr.vcf
+    jobid: 154
+    reason: Missing output files: data/5/4/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:57 2025]
+Finished job 154.
+49 of 188 steps (26%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:57 2025]
+localrule access_tree:
+    input: data/6/simulated.trees, data/6/3/init.txt
+    output: data/6/3/center.tree.pkl, data/6/3/left.tree.pkl, data/6/3/right.tree.pkl, data/6/3/lcr.trees, data/6/3/intervals.tsv
+    jobid: 176
+    reason: Missing output files: data/6/3/lcr.trees, data/6/3/intervals.tsv
+    wildcards: folder=data, sim_id=6, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 176.
+50 of 188 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule gzip_tree_vcf:
+    input: data/1/2/lcr.vcf
+    output: data/1/2/lcr.vcf.gz
+    jobid: 39
+    reason: Missing output files: data/1/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 39.
+51 of 188 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule gzip_tree_vcf:
+    input: data/5/0/lcr.vcf
+    output: data/5/0/lcr.vcf.gz
+    jobid: 132
+    reason: Missing output files: data/5/0/lcr.vcf.gz; Input files updated by another job: data/5/0/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 132.
+52 of 188 steps (28%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule gzip_tree_vcf:
+    input: data/7/3/lcr.vcf
+    output: data/7/3/lcr.vcf.gz
+    jobid: 200
+    reason: Missing output files: data/7/3/lcr.vcf.gz; Input files updated by another job: data/7/3/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 200.
+53 of 188 steps (28%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule tabix_tree_vcf:
+    input: data/6/4/lcr.vcf.gz
+    output: data/6/4/lcr.vcf.gz.tbi
+    jobid: 182
+    reason: Missing output files: data/6/4/lcr.vcf.gz.tbi; Input files updated by another job: data/6/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 182.
+54 of 188 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule tabix_tree_vcf:
+    input: data/2/1/lcr.vcf.gz
+    output: data/2/1/lcr.vcf.gz.tbi
+    jobid: 63
+    reason: Missing output files: data/2/1/lcr.vcf.gz.tbi; Input files updated by another job: data/2/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 63.
+55 of 188 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule gzip_tree_vcf:
+    input: data/2/2/lcr.vcf
+    output: data/2/2/lcr.vcf.gz
+    jobid: 65
+    reason: Missing output files: data/2/2/lcr.vcf.gz; Input files updated by another job: data/2/2/lcr.vcf
+    wildcards: folder=data, sim_id=2, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 65.
+56 of 188 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule subset_lcr_vcf:
+    input: data/0/3/lcr.vcf.gz, data/0/3/intervals.tsv, data/0/3/lcr.vcf.gz.tbi
+    output: data/0/3/center.vcf.gz
+    jobid: 17
+    reason: Missing output files: data/0/3/center.vcf.gz; Input files updated by another job: data/0/3/lcr.vcf.gz.tbi, data/0/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 17.
+57 of 188 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule tabix_tree_vcf:
+    input: data/8/2/lcr.vcf.gz
+    output: data/8/2/lcr.vcf.gz.tbi
+    jobid: 224
+    reason: Missing output files: data/8/2/lcr.vcf.gz.tbi; Input files updated by another job: data/8/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:58 2025]
+Finished job 224.
+58 of 188 steps (31%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:58 2025]
+localrule gzip_tree_vcf:
+    input: data/6/0/lcr.vcf
+    output: data/6/0/lcr.vcf.gz
+    jobid: 158
+    reason: Missing output files: data/6/0/lcr.vcf.gz; Input files updated by another job: data/6/0/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 158.
+59 of 188 steps (31%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule tabix_tree_vcf:
+    input: data/7/4/lcr.vcf.gz
+    output: data/7/4/lcr.vcf.gz.tbi
+    jobid: 208
+    reason: Missing output files: data/7/4/lcr.vcf.gz.tbi; Input files updated by another job: data/7/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 208.
+60 of 188 steps (32%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule gzip_tree_vcf:
+    input: data/4/0/lcr.vcf
+    output: data/4/0/lcr.vcf.gz
+    jobid: 106
+    reason: Missing output files: data/4/0/lcr.vcf.gz; Input files updated by another job: data/4/0/lcr.vcf
+    wildcards: folder=data, sim_id=4, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 106.
+61 of 188 steps (32%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule gzip_tree_vcf:
+    input: data/8/3/lcr.vcf
+    output: data/8/3/lcr.vcf.gz
+    jobid: 226
+    reason: Missing output files: data/8/3/lcr.vcf.gz; Input files updated by another job: data/8/3/lcr.vcf
+    wildcards: folder=data, sim_id=8, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 226.
+62 of 188 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule tabix_tree_vcf:
+    input: data/0/0/lcr.vcf.gz
+    output: data/0/0/lcr.vcf.gz.tbi
+    jobid: 6
+    reason: Missing output files: data/0/0/lcr.vcf.gz.tbi; Input files updated by another job: data/0/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 6.
+63 of 188 steps (34%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule gzip_tree_vcf:
+    input: data/9/3/lcr.vcf
+    output: data/9/3/lcr.vcf.gz
+    jobid: 252
+    reason: Missing output files: data/9/3/lcr.vcf.gz; Input files updated by another job: data/9/3/lcr.vcf
+    wildcards: folder=data, sim_id=9, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 252.
+64 of 188 steps (34%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule tabix_tree_vcf:
+    input: data/5/1/lcr.vcf.gz
+    output: data/5/1/lcr.vcf.gz.tbi
+    jobid: 141
+    reason: Missing output files: data/5/1/lcr.vcf.gz.tbi; Input files updated by another job: data/5/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 141.
+65 of 188 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule tabix_tree_vcf:
+    input: data/8/4/lcr.vcf.gz
+    output: data/8/4/lcr.vcf.gz.tbi
+    jobid: 234
+    reason: Missing output files: data/8/4/lcr.vcf.gz.tbi; Input files updated by another job: data/8/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:40:59 2025]
+Finished job 234.
+66 of 188 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:40:59 2025]
+localrule tree_to_vcf:
+    input: data/4/4/lcr.trees
+    output: data/4/4/lcr.vcf
+    jobid: 128
+    reason: Missing output files: data/4/4/lcr.vcf
+    wildcards: folder=data, sim_id=4, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 128.
+67 of 188 steps (36%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule tabix_tree_vcf:
+    input: data/2/3/lcr.vcf.gz
+    output: data/2/3/lcr.vcf.gz.tbi
+    jobid: 73
+    reason: Missing output files: data/2/3/lcr.vcf.gz.tbi; Input files updated by another job: data/2/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 73.
+68 of 188 steps (36%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule subset_lcr_vcf:
+    input: data/2/3/lcr.vcf.gz, data/2/3/intervals.tsv, data/2/3/lcr.vcf.gz.tbi
+    output: data/2/3/center.vcf.gz
+    jobid: 69
+    reason: Missing output files: data/2/3/center.vcf.gz; Input files updated by another job: data/2/3/lcr.vcf.gz, data/2/3/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=2, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 69.
+69 of 188 steps (37%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule gzip_tree_vcf:
+    input: data/3/2/lcr.vcf
+    output: data/3/2/lcr.vcf.gz
+    jobid: 91
+    reason: Missing output files: data/3/2/lcr.vcf.gz; Input files updated by another job: data/3/2/lcr.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=3, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 91.
+70 of 188 steps (37%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule subset_lcr_vcf:
+    input: data/9/2/lcr.vcf.gz, data/9/2/intervals.tsv, data/9/2/lcr.vcf.gz.tbi
+    output: data/9/2/center.vcf.gz
+    jobid: 246
+    reason: Missing output files: data/9/2/center.vcf.gz; Input files updated by another job: data/9/2/lcr.vcf.gz, data/9/2/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=9, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 246.
+71 of 188 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule gzip_tree_vcf:
+    input: data/0/2/lcr.vcf
+    output: data/0/2/lcr.vcf.gz
+    jobid: 13
+    reason: Missing output files: data/0/2/lcr.vcf.gz; Input files updated by another job: data/0/2/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 13.
+72 of 188 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule subset_lcr_vcf:
+    input: data/4/2/lcr.vcf.gz, data/4/2/intervals.tsv, data/4/2/lcr.vcf.gz.tbi
+    output: data/4/2/center.vcf.gz
+    jobid: 116
+    reason: Missing output files: data/4/2/center.vcf.gz; Input files updated by another job: data/4/2/lcr.vcf.gz, data/4/2/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=4, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:00 2025]
+Finished job 116.
+73 of 188 steps (39%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:00 2025]
+localrule tree_to_vcf:
+    input: data/9/4/lcr.trees
+    output: data/9/4/lcr.vcf
+    jobid: 258
+    reason: Missing output files: data/9/4/lcr.vcf
+    wildcards: folder=data, sim_id=9, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:01 2025]
+Finished job 258.
+74 of 188 steps (39%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:01 2025]
+localrule tree_to_vcf:
+    input: data/6/1/lcr.trees
+    output: data/6/1/lcr.vcf
+    jobid: 165
+    reason: Missing output files: data/6/1/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:01 2025]
+Finished job 165.
+75 of 188 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:01 2025]
+localrule tree_to_vcf:
+    input: data/1/0/lcr.trees
+    output: data/1/0/lcr.vcf
+    jobid: 29
+    reason: Missing output files: data/1/0/lcr.vcf
+    wildcards: folder=data, sim_id=1, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:01 2025]
+Finished job 29.
+76 of 188 steps (40%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:01 2025]
+localrule access_tree:
+    input: data/1/simulated.trees, data/1/4/init.txt
+    output: data/1/4/center.tree.pkl, data/1/4/left.tree.pkl, data/1/4/right.tree.pkl, data/1/4/lcr.trees, data/1/4/intervals.tsv
+    jobid: 51
+    reason: Missing output files: data/1/4/intervals.tsv, data/1/4/lcr.trees
+    wildcards: folder=data, sim_id=1, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:02 2025]
+Finished job 51.
+77 of 188 steps (41%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:02 2025]
+localrule gzip_tree_vcf:
+    input: data/5/2/lcr.vcf
+    output: data/5/2/lcr.vcf.gz
+    jobid: 143
+    reason: Missing output files: data/5/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:02 2025]
+Finished job 143.
+78 of 188 steps (41%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:02 2025]
+localrule subset_lcr_vcf:
+    input: data/8/2/lcr.vcf.gz, data/8/2/intervals.tsv, data/8/2/lcr.vcf.gz.tbi
+    output: data/8/2/center.vcf.gz
+    jobid: 220
+    reason: Missing output files: data/8/2/center.vcf.gz; Input files updated by another job: data/8/2/lcr.vcf.gz.tbi, data/8/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 220.
+79 of 188 steps (42%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule tree_to_vcf:
+    input: data/1/1/lcr.trees
+    output: data/1/1/lcr.vcf
+    jobid: 35
+    reason: Missing output files: data/1/1/lcr.vcf
+    wildcards: folder=data, sim_id=1, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 35.
+80 of 188 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule gzip_tree_vcf:
+    input: data/1/1/lcr.vcf
+    output: data/1/1/lcr.vcf.gz
+    jobid: 34
+    reason: Missing output files: data/1/1/lcr.vcf.gz; Input files updated by another job: data/1/1/lcr.vcf
+    wildcards: folder=data, sim_id=1, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 34.
+81 of 188 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule tabix_tree_vcf:
+    input: data/0/2/lcr.vcf.gz
+    output: data/0/2/lcr.vcf.gz.tbi
+    jobid: 16
+    reason: Missing output files: data/0/2/lcr.vcf.gz.tbi; Input files updated by another job: data/0/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 16.
+82 of 188 steps (44%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule subset_lcr_vcf:
+    input: data/0/2/lcr.vcf.gz, data/0/2/intervals.tsv, data/0/2/lcr.vcf.gz.tbi
+    output: data/0/2/center.vcf.gz
+    jobid: 12
+    reason: Missing output files: data/0/2/center.vcf.gz; Input files updated by another job: data/0/2/lcr.vcf.gz, data/0/2/intervals.tsv, data/0/2/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=0, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 12.
+83 of 188 steps (44%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule gzip_tree_vcf:
+    input: data/4/4/lcr.vcf
+    output: data/4/4/lcr.vcf.gz
+    jobid: 127
+    reason: Missing output files: data/4/4/lcr.vcf.gz; Input files updated by another job: data/4/4/lcr.vcf
+    wildcards: folder=data, sim_id=4, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:03 2025]
+Finished job 127.
+84 of 188 steps (45%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:03 2025]
+localrule access_tree:
+    input: data/2/simulated.trees, data/2/0/init.txt
+    output: data/2/0/center.tree.pkl, data/2/0/left.tree.pkl, data/2/0/right.tree.pkl, data/2/0/lcr.trees, data/2/0/intervals.tsv
+    jobid: 56
+    reason: Missing output files: data/2/0/intervals.tsv, data/2/0/lcr.trees
+    wildcards: folder=data, sim_id=2, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:04 2025]
+Finished job 56.
+85 of 188 steps (45%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:04 2025]
+localrule tree_to_vcf:
+    input: data/2/0/lcr.trees
+    output: data/2/0/lcr.vcf
+    jobid: 55
+    reason: Missing output files: data/2/0/lcr.vcf; Input files updated by another job: data/2/0/lcr.trees
+    wildcards: folder=data, sim_id=2, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:05 2025]
+Finished job 55.
+86 of 188 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:05 2025]
+localrule gzip_tree_vcf:
+    input: data/7/2/lcr.vcf
+    output: data/7/2/lcr.vcf.gz
+    jobid: 195
+    reason: Missing output files: data/7/2/lcr.vcf.gz; Input files updated by another job: data/7/2/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:05 2025]
+Finished job 195.
+87 of 188 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:05 2025]
+localrule access_tree:
+    input: data/7/simulated.trees, data/7/1/init.txt
+    output: data/7/1/center.tree.pkl, data/7/1/left.tree.pkl, data/7/1/right.tree.pkl, data/7/1/lcr.trees, data/7/1/intervals.tsv
+    jobid: 192
+    reason: Missing output files: data/7/1/lcr.trees, data/7/1/intervals.tsv
+    wildcards: folder=data, sim_id=7, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:06 2025]
+Finished job 192.
+88 of 188 steps (47%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:06 2025]
+localrule tree_to_vcf:
+    input: data/7/1/lcr.trees
+    output: data/7/1/lcr.vcf
+    jobid: 191
+    reason: Missing output files: data/7/1/lcr.vcf; Input files updated by another job: data/7/1/lcr.trees
+    wildcards: folder=data, sim_id=7, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:06 2025]
+Finished job 191.
+89 of 188 steps (47%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:06 2025]
+localrule gzip_tree_vcf:
+    input: data/7/1/lcr.vcf
+    output: data/7/1/lcr.vcf.gz
+    jobid: 190
+    reason: Missing output files: data/7/1/lcr.vcf.gz; Input files updated by another job: data/7/1/lcr.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=7, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:06 2025]
+Finished job 190.
+90 of 188 steps (48%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:06 2025]
+localrule tabix_tree_vcf:
+    input: data/7/1/lcr.vcf.gz
+    output: data/7/1/lcr.vcf.gz.tbi
+    jobid: 193
+    reason: Missing output files: data/7/1/lcr.vcf.gz.tbi; Input files updated by another job: data/7/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:06 2025]
+Finished job 193.
+91 of 188 steps (48%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:06 2025]
+localrule tabix_tree_vcf:
+    input: data/4/0/lcr.vcf.gz
+    output: data/4/0/lcr.vcf.gz.tbi
+    jobid: 110
+    reason: Missing output files: data/4/0/lcr.vcf.gz.tbi; Input files updated by another job: data/4/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:06 2025]
+Finished job 110.
+92 of 188 steps (49%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:06 2025]
+localrule tabix_tree_vcf:
+    input: data/9/1/lcr.vcf.gz
+    output: data/9/1/lcr.vcf.gz.tbi
+    jobid: 245
+    reason: Missing output files: data/9/1/lcr.vcf.gz.tbi; Input files updated by another job: data/9/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 245.
+93 of 188 steps (49%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule subset_lcr_vcf:
+    input: data/9/1/lcr.vcf.gz, data/9/1/intervals.tsv, data/9/1/lcr.vcf.gz.tbi
+    output: data/9/1/center.vcf.gz
+    jobid: 241
+    reason: Missing output files: data/9/1/center.vcf.gz; Input files updated by another job: data/9/1/lcr.vcf.gz.tbi, data/9/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 241.
+94 of 188 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule tabix_tree_vcf:
+    input: data/1/1/lcr.vcf.gz
+    output: data/1/1/lcr.vcf.gz.tbi
+    jobid: 37
+    reason: Missing output files: data/1/1/lcr.vcf.gz.tbi; Input files updated by another job: data/1/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 37.
+95 of 188 steps (51%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule tree_to_vcf:
+    input: data/6/2/lcr.trees
+    output: data/6/2/lcr.vcf
+    jobid: 170
+    reason: Missing output files: data/6/2/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 170.
+96 of 188 steps (51%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule gzip_tree_vcf:
+    input: data/6/2/lcr.vcf
+    output: data/6/2/lcr.vcf.gz
+    jobid: 169
+    reason: Missing output files: data/6/2/lcr.vcf.gz; Input files updated by another job: data/6/2/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 169.
+97 of 188 steps (52%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule tabix_tree_vcf:
+    input: data/6/2/lcr.vcf.gz
+    output: data/6/2/lcr.vcf.gz.tbi
+    jobid: 172
+    reason: Missing output files: data/6/2/lcr.vcf.gz.tbi; Input files updated by another job: data/6/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:07 2025]
+Finished job 172.
+98 of 188 steps (52%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:07 2025]
+localrule subset_lcr_vcf:
+    input: data/6/2/lcr.vcf.gz, data/6/2/intervals.tsv, data/6/2/lcr.vcf.gz.tbi
+    output: data/6/2/center.vcf.gz
+    jobid: 168
+    reason: Missing output files: data/6/2/center.vcf.gz; Input files updated by another job: data/6/2/lcr.vcf.gz.tbi, data/6/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 168.
+99 of 188 steps (53%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule subset_lcr_vcf:
+    input: data/1/1/lcr.vcf.gz, data/1/1/intervals.tsv, data/1/1/lcr.vcf.gz.tbi
+    output: data/1/1/center.vcf.gz
+    jobid: 33
+    reason: Missing output files: data/1/1/center.vcf.gz; Input files updated by another job: data/1/1/lcr.vcf.gz, data/1/1/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=1, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 33.
+100 of 188 steps (53%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule tabix_tree_vcf:
+    input: data/7/2/lcr.vcf.gz
+    output: data/7/2/lcr.vcf.gz.tbi
+    jobid: 198
+    reason: Missing output files: data/7/2/lcr.vcf.gz.tbi; Input files updated by another job: data/7/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 198.
+101 of 188 steps (54%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule subset_lcr_vcf:
+    input: data/2/4/lcr.vcf.gz, data/2/4/intervals.tsv, data/2/4/lcr.vcf.gz.tbi
+    output: data/2/4/center.vcf.gz
+    jobid: 74
+    reason: Missing output files: data/2/4/center.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 74.
+102 of 188 steps (54%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule subset_lcr_vcf:
+    input: data/7/2/lcr.vcf.gz, data/7/2/intervals.tsv, data/7/2/lcr.vcf.gz.tbi
+    output: data/7/2/center.vcf.gz
+    jobid: 194
+    reason: Missing output files: data/7/2/center.vcf.gz; Input files updated by another job: data/7/2/lcr.vcf.gz, data/7/2/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=7, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 194.
+103 of 188 steps (55%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule gzip_tree_vcf:
+    input: data/3/0/lcr.vcf
+    output: data/3/0/lcr.vcf.gz
+    jobid: 80
+    reason: Missing output files: data/3/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 80.
+104 of 188 steps (55%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule tabix_tree_vcf:
+    input: data/3/0/lcr.vcf.gz
+    output: data/3/0/lcr.vcf.gz.tbi
+    jobid: 84
+    reason: Missing output files: data/3/0/lcr.vcf.gz.tbi; Input files updated by another job: data/3/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:08 2025]
+Finished job 84.
+105 of 188 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:08 2025]
+localrule subset_lcr_vcf:
+    input: data/7/1/lcr.vcf.gz, data/7/1/intervals.tsv, data/7/1/lcr.vcf.gz.tbi
+    output: data/7/1/center.vcf.gz
+    jobid: 189
+    reason: Missing output files: data/7/1/center.vcf.gz; Input files updated by another job: data/7/1/lcr.vcf.gz.tbi, data/7/1/lcr.vcf.gz, data/7/1/intervals.tsv
+    wildcards: folder=data, sim_id=7, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 189.
+106 of 188 steps (56%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule subset_lcr_vcf:
+    input: data/5/1/lcr.vcf.gz, data/5/1/intervals.tsv, data/5/1/lcr.vcf.gz.tbi
+    output: data/5/1/center.vcf.gz
+    jobid: 137
+    reason: Missing output files: data/5/1/center.vcf.gz; Input files updated by another job: data/5/1/lcr.vcf.gz.tbi, data/5/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 137.
+107 of 188 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule gzip_tree_vcf:
+    input: data/8/1/lcr.vcf
+    output: data/8/1/lcr.vcf.gz
+    jobid: 216
+    reason: Missing output files: data/8/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 216.
+108 of 188 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule tabix_tree_vcf:
+    input: data/8/1/lcr.vcf.gz
+    output: data/8/1/lcr.vcf.gz.tbi
+    jobid: 219
+    reason: Missing output files: data/8/1/lcr.vcf.gz.tbi; Input files updated by another job: data/8/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 219.
+109 of 188 steps (58%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule subset_lcr_vcf:
+    input: data/8/1/lcr.vcf.gz, data/8/1/intervals.tsv, data/8/1/lcr.vcf.gz.tbi
+    output: data/8/1/center.vcf.gz
+    jobid: 215
+    reason: Missing output files: data/8/1/center.vcf.gz; Input files updated by another job: data/8/1/lcr.vcf.gz, data/8/1/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=8, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 215.
+110 of 188 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule tabix_tree_vcf:
+    input: data/9/0/lcr.vcf.gz
+    output: data/9/0/lcr.vcf.gz.tbi
+    jobid: 240
+    reason: Missing output files: data/9/0/lcr.vcf.gz.tbi; Input files updated by another job: data/9/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 240.
+111 of 188 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:09 2025]
+localrule gzip_tree_vcf:
+    input: data/9/4/lcr.vcf
+    output: data/9/4/lcr.vcf.gz
+    jobid: 257
+    reason: Missing output files: data/9/4/lcr.vcf.gz; Input files updated by another job: data/9/4/lcr.vcf
+    wildcards: folder=data, sim_id=9, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:09 2025]
+Finished job 257.
+112 of 188 steps (60%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule tabix_tree_vcf:
+    input: data/5/2/lcr.vcf.gz
+    output: data/5/2/lcr.vcf.gz.tbi
+    jobid: 146
+    reason: Missing output files: data/5/2/lcr.vcf.gz.tbi; Input files updated by another job: data/5/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:10 2025]
+Finished job 146.
+113 of 188 steps (60%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule gzip_tree_vcf:
+    input: data/1/0/lcr.vcf
+    output: data/1/0/lcr.vcf.gz
+    jobid: 28
+    reason: Missing output files: data/1/0/lcr.vcf.gz; Input files updated by another job: data/1/0/lcr.vcf
+    wildcards: folder=data, sim_id=1, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:10 2025]
+Finished job 28.
+114 of 188 steps (61%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule gzip_tree_vcf:
+    input: data/6/1/lcr.vcf
+    output: data/6/1/lcr.vcf.gz
+    jobid: 164
+    reason: Missing output files: data/6/1/lcr.vcf.gz; Input files updated by another job: data/6/1/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:10 2025]
+Finished job 164.
+115 of 188 steps (61%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule tree_to_vcf:
+    input: data/0/4/lcr.trees
+    output: data/0/4/lcr.vcf
+    jobid: 24
+    reason: Missing output files: data/0/4/lcr.vcf; Input files updated by another job: data/0/4/lcr.trees
+    wildcards: folder=data, sim_id=0, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:10 2025]
+Finished job 24.
+116 of 188 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule subset_lcr_vcf:
+    input: data/3/0/lcr.vcf.gz, data/3/0/intervals.tsv, data/3/0/lcr.vcf.gz.tbi
+    output: data/3/0/center.vcf.gz
+    jobid: 79
+    reason: Missing output files: data/3/0/center.vcf.gz; Input files updated by another job: data/3/0/lcr.vcf.gz, data/3/0/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:10 2025]
+Finished job 79.
+117 of 188 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:10 2025]
+localrule tree_to_vcf:
+    input: data/7/0/lcr.trees
+    output: data/7/0/lcr.vcf
+    jobid: 185
+    reason: Missing output files: data/7/0/lcr.vcf; Input files updated by another job: data/7/0/lcr.trees
+    wildcards: folder=data, sim_id=7, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:11 2025]
+Finished job 185.
+118 of 188 steps (63%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:11 2025]
+localrule subset_lcr_vcf:
+    input: data/0/0/lcr.vcf.gz, data/0/0/intervals.tsv, data/0/0/lcr.vcf.gz.tbi
+    output: data/0/0/center.vcf.gz
+    jobid: 1
+    reason: Missing output files: data/0/0/center.vcf.gz; Input files updated by another job: data/0/0/lcr.vcf.gz, data/0/0/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=0, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:11 2025]
+Finished job 1.
+119 of 188 steps (63%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:11 2025]
+localrule subset_lcr_vcf:
+    input: data/4/0/lcr.vcf.gz, data/4/0/intervals.tsv, data/4/0/lcr.vcf.gz.tbi
+    output: data/4/0/center.vcf.gz
+    jobid: 105
+    reason: Missing output files: data/4/0/center.vcf.gz; Input files updated by another job: data/4/0/lcr.vcf.gz, data/4/0/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=4, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:11 2025]
+Finished job 105.
+120 of 188 steps (64%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:11 2025]
+localrule subset_lcr_vcf:
+    input: data/9/0/lcr.vcf.gz, data/9/0/intervals.tsv, data/9/0/lcr.vcf.gz.tbi
+    output: data/9/0/center.vcf.gz
+    jobid: 235
+    reason: Missing output files: data/9/0/center.vcf.gz; Input files updated by another job: data/9/0/lcr.vcf.gz.tbi, data/9/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:11 2025]
+Finished job 235.
+121 of 188 steps (64%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:11 2025]
+localrule tabix_tree_vcf:
+    input: data/3/2/lcr.vcf.gz
+    output: data/3/2/lcr.vcf.gz.tbi
+    jobid: 94
+    reason: Missing output files: data/3/2/lcr.vcf.gz.tbi; Input files updated by another job: data/3/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:11 2025]
+Finished job 94.
+122 of 188 steps (65%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:11 2025]
+localrule tabix_tree_vcf:
+    input: data/9/3/lcr.vcf.gz
+    output: data/9/3/lcr.vcf.gz.tbi
+    jobid: 255
+    reason: Missing output files: data/9/3/lcr.vcf.gz.tbi; Input files updated by another job: data/9/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 255.
+123 of 188 steps (65%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule tabix_tree_vcf:
+    input: data/6/0/lcr.vcf.gz
+    output: data/6/0/lcr.vcf.gz.tbi
+    jobid: 162
+    reason: Missing output files: data/6/0/lcr.vcf.gz.tbi; Input files updated by another job: data/6/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 162.
+124 of 188 steps (66%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule subset_lcr_vcf:
+    input: data/6/0/lcr.vcf.gz, data/6/0/intervals.tsv, data/6/0/lcr.vcf.gz.tbi
+    output: data/6/0/center.vcf.gz
+    jobid: 157
+    reason: Missing output files: data/6/0/center.vcf.gz; Input files updated by another job: data/6/0/lcr.vcf.gz, data/6/0/lcr.vcf.gz.tbi, data/6/0/intervals.tsv
+    wildcards: folder=data, sim_id=6, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 157.
+125 of 188 steps (66%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule tabix_tree_vcf:
+    input: data/2/2/lcr.vcf.gz
+    output: data/2/2/lcr.vcf.gz.tbi
+    jobid: 68
+    reason: Missing output files: data/2/2/lcr.vcf.gz.tbi; Input files updated by another job: data/2/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 68.
+126 of 188 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule tabix_tree_vcf:
+    input: data/8/3/lcr.vcf.gz
+    output: data/8/3/lcr.vcf.gz.tbi
+    jobid: 229
+    reason: Missing output files: data/8/3/lcr.vcf.gz.tbi; Input files updated by another job: data/8/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 229.
+127 of 188 steps (68%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule gzip_tree_vcf:
+    input: data/5/4/lcr.vcf
+    output: data/5/4/lcr.vcf.gz
+    jobid: 153
+    reason: Missing output files: data/5/4/lcr.vcf.gz; Input files updated by another job: data/5/4/lcr.vcf
+    wildcards: folder=data, sim_id=5, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 153.
+128 of 188 steps (68%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule tabix_tree_vcf:
+    input: data/5/0/lcr.vcf.gz
+    output: data/5/0/lcr.vcf.gz.tbi
+    jobid: 136
+    reason: Missing output files: data/5/0/lcr.vcf.gz.tbi; Input files updated by another job: data/5/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:12 2025]
+Finished job 136.
+129 of 188 steps (69%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:12 2025]
+localrule subset_lcr_vcf:
+    input: data/5/0/lcr.vcf.gz, data/5/0/intervals.tsv, data/5/0/lcr.vcf.gz.tbi
+    output: data/5/0/center.vcf.gz
+    jobid: 131
+    reason: Missing output files: data/5/0/center.vcf.gz; Input files updated by another job: data/5/0/lcr.vcf.gz, data/5/0/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=5, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 131.
+130 of 188 steps (69%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule tabix_tree_vcf:
+    input: data/1/2/lcr.vcf.gz
+    output: data/1/2/lcr.vcf.gz.tbi
+    jobid: 42
+    reason: Missing output files: data/1/2/lcr.vcf.gz.tbi; Input files updated by another job: data/1/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 42.
+131 of 188 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule tree_to_vcf:
+    input: data/6/3/lcr.trees
+    output: data/6/3/lcr.vcf
+    jobid: 175
+    reason: Missing output files: data/6/3/lcr.vcf; Input files updated by another job: data/6/3/lcr.trees
+    wildcards: folder=data, sim_id=6, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 175.
+132 of 188 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule subset_lcr_vcf:
+    input: data/2/1/lcr.vcf.gz, data/2/1/intervals.tsv, data/2/1/lcr.vcf.gz.tbi
+    output: data/2/1/center.vcf.gz
+    jobid: 59
+    reason: Missing output files: data/2/1/center.vcf.gz; Input files updated by another job: data/2/1/lcr.vcf.gz.tbi, data/2/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 59.
+133 of 188 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule tabix_tree_vcf:
+    input: data/7/3/lcr.vcf.gz
+    output: data/7/3/lcr.vcf.gz.tbi
+    jobid: 203
+    reason: Missing output files: data/7/3/lcr.vcf.gz.tbi; Input files updated by another job: data/7/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 203.
+134 of 188 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule subset_lcr_vcf:
+    input: data/3/1/lcr.vcf.gz, data/3/1/intervals.tsv, data/3/1/lcr.vcf.gz.tbi
+    output: data/3/1/center.vcf.gz
+    jobid: 85
+    reason: Missing output files: data/3/1/center.vcf.gz; Input files updated by another job: data/3/1/lcr.vcf.gz.tbi, data/3/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:13 2025]
+Finished job 85.
+135 of 188 steps (72%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:13 2025]
+localrule subset_lcr_vcf:
+    input: data/5/2/lcr.vcf.gz, data/5/2/intervals.tsv, data/5/2/lcr.vcf.gz.tbi
+    output: data/5/2/center.vcf.gz
+    jobid: 142
+    reason: Missing output files: data/5/2/center.vcf.gz; Input files updated by another job: data/5/2/lcr.vcf.gz.tbi, data/5/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 142.
+136 of 188 steps (72%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule subset_lcr_vcf:
+    input: data/1/2/lcr.vcf.gz, data/1/2/intervals.tsv, data/1/2/lcr.vcf.gz.tbi
+    output: data/1/2/center.vcf.gz
+    jobid: 38
+    reason: Missing output files: data/1/2/center.vcf.gz; Input files updated by another job: data/1/2/lcr.vcf.gz.tbi, data/1/2/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 38.
+137 of 188 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule subset_lcr_vcf:
+    input: data/2/2/lcr.vcf.gz, data/2/2/intervals.tsv, data/2/2/lcr.vcf.gz.tbi
+    output: data/2/2/center.vcf.gz
+    jobid: 64
+    reason: Missing output files: data/2/2/center.vcf.gz; Input files updated by another job: data/2/2/lcr.vcf.gz, data/2/2/lcr.vcf.gz.tbi, data/2/2/intervals.tsv
+    wildcards: folder=data, sim_id=2, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 64.
+138 of 188 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule subset_lcr_vcf:
+    input: data/3/2/lcr.vcf.gz, data/3/2/intervals.tsv, data/3/2/lcr.vcf.gz.tbi
+    output: data/3/2/center.vcf.gz
+    jobid: 90
+    reason: Missing output files: data/3/2/center.vcf.gz; Input files updated by another job: data/3/2/lcr.vcf.gz.tbi, data/3/2/lcr.vcf.gz, data/3/2/intervals.tsv
+    wildcards: folder=data, sim_id=3, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 90.
+139 of 188 steps (74%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule tabix_tree_vcf:
+    input: data/9/4/lcr.vcf.gz
+    output: data/9/4/lcr.vcf.gz.tbi
+    jobid: 260
+    reason: Missing output files: data/9/4/lcr.vcf.gz.tbi; Input files updated by another job: data/9/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=9, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 260.
+140 of 188 steps (74%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule tabix_tree_vcf:
+    input: data/1/0/lcr.vcf.gz
+    output: data/1/0/lcr.vcf.gz.tbi
+    jobid: 32
+    reason: Missing output files: data/1/0/lcr.vcf.gz.tbi; Input files updated by another job: data/1/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:14 2025]
+Finished job 32.
+141 of 188 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:14 2025]
+localrule subset_lcr_vcf:
+    input: data/1/0/lcr.vcf.gz, data/1/0/intervals.tsv, data/1/0/lcr.vcf.gz.tbi
+    output: data/1/0/center.vcf.gz
+    jobid: 27
+    reason: Missing output files: data/1/0/center.vcf.gz; Input files updated by another job: data/1/0/lcr.vcf.gz, data/1/0/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=1, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:15 2025]
+Finished job 27.
+142 of 188 steps (76%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:15 2025]
+localrule tabix_tree_vcf:
+    input: data/6/1/lcr.vcf.gz
+    output: data/6/1/lcr.vcf.gz.tbi
+    jobid: 167
+    reason: Missing output files: data/6/1/lcr.vcf.gz.tbi; Input files updated by another job: data/6/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:15 2025]
+Finished job 167.
+143 of 188 steps (76%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:15 2025]
+localrule subset_lcr_vcf:
+    input: data/6/1/lcr.vcf.gz, data/6/1/intervals.tsv, data/6/1/lcr.vcf.gz.tbi
+    output: data/6/1/center.vcf.gz
+    jobid: 163
+    reason: Missing output files: data/6/1/center.vcf.gz; Input files updated by another job: data/6/1/lcr.vcf.gz, data/6/1/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=6, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:15 2025]
+Finished job 163.
+144 of 188 steps (77%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:15 2025]
+localrule subset_lcr_vcf:
+    input: data/7/4/lcr.vcf.gz, data/7/4/intervals.tsv, data/7/4/lcr.vcf.gz.tbi
+    output: data/7/4/center.vcf.gz
+    jobid: 204
+    reason: Missing output files: data/7/4/center.vcf.gz; Input files updated by another job: data/7/4/lcr.vcf.gz.tbi, data/7/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:15 2025]
+Finished job 204.
+145 of 188 steps (77%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:15 2025]
+localrule tabix_tree_vcf:
+    input: data/5/4/lcr.vcf.gz
+    output: data/5/4/lcr.vcf.gz.tbi
+    jobid: 156
+    reason: Missing output files: data/5/4/lcr.vcf.gz.tbi; Input files updated by another job: data/5/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:15 2025]
+Finished job 156.
+146 of 188 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:15 2025]
+localrule tree_to_vcf:
+    input: data/1/4/lcr.trees
+    output: data/1/4/lcr.vcf
+    jobid: 50
+    reason: Missing output files: data/1/4/lcr.vcf; Input files updated by another job: data/1/4/lcr.trees
+    wildcards: folder=data, sim_id=1, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:16 2025]
+Finished job 50.
+147 of 188 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:16 2025]
+localrule gzip_tree_vcf:
+    input: data/1/4/lcr.vcf
+    output: data/1/4/lcr.vcf.gz
+    jobid: 49
+    reason: Missing output files: data/1/4/lcr.vcf.gz; Input files updated by another job: data/1/4/lcr.vcf
+    wildcards: folder=data, sim_id=1, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:16 2025]
+Finished job 49.
+148 of 188 steps (79%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:16 2025]
+localrule tabix_tree_vcf:
+    input: data/1/4/lcr.vcf.gz
+    output: data/1/4/lcr.vcf.gz.tbi
+    jobid: 52
+    reason: Missing output files: data/1/4/lcr.vcf.gz.tbi; Input files updated by another job: data/1/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:16 2025]
+Finished job 52.
+149 of 188 steps (79%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:16 2025]
+localrule tree_to_vcf:
+    input: data/3/4/lcr.trees
+    output: data/3/4/lcr.vcf
+    jobid: 102
+    reason: Missing output files: data/3/4/lcr.vcf
+    wildcards: folder=data, sim_id=3, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:16 2025]
+Finished job 102.
+150 of 188 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:16 2025]
+localrule subset_lcr_vcf:
+    input: data/8/4/lcr.vcf.gz, data/8/4/intervals.tsv, data/8/4/lcr.vcf.gz.tbi
+    output: data/8/4/center.vcf.gz
+    jobid: 230
+    reason: Missing output files: data/8/4/center.vcf.gz; Input files updated by another job: data/8/4/lcr.vcf.gz.tbi, data/8/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:16 2025]
+Finished job 230.
+151 of 188 steps (80%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:16 2025]
+localrule gzip_tree_vcf:
+    input: data/6/3/lcr.vcf
+    output: data/6/3/lcr.vcf.gz
+    jobid: 174
+    reason: Missing output files: data/6/3/lcr.vcf.gz; Input files updated by another job: data/6/3/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 174.
+152 of 188 steps (81%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule tabix_tree_vcf:
+    input: data/6/3/lcr.vcf.gz
+    output: data/6/3/lcr.vcf.gz.tbi
+    jobid: 177
+    reason: Missing output files: data/6/3/lcr.vcf.gz.tbi; Input files updated by another job: data/6/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=6, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 177.
+153 of 188 steps (81%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule subset_lcr_vcf:
+    input: data/6/3/lcr.vcf.gz, data/6/3/intervals.tsv, data/6/3/lcr.vcf.gz.tbi
+    output: data/6/3/center.vcf.gz
+    jobid: 173
+    reason: Missing output files: data/6/3/center.vcf.gz; Input files updated by another job: data/6/3/lcr.vcf.gz, data/6/3/lcr.vcf.gz.tbi, data/6/3/intervals.tsv
+    wildcards: folder=data, sim_id=6, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 173.
+154 of 188 steps (82%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule subset_lcr_vcf:
+    input: data/9/3/lcr.vcf.gz, data/9/3/intervals.tsv, data/9/3/lcr.vcf.gz.tbi
+    output: data/9/3/center.vcf.gz
+    jobid: 251
+    reason: Missing output files: data/9/3/center.vcf.gz; Input files updated by another job: data/9/3/intervals.tsv, data/9/3/lcr.vcf.gz, data/9/3/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=9, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 251.
+155 of 188 steps (82%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule gzip_tree_vcf:
+    input: data/5/3/lcr.vcf
+    output: data/5/3/lcr.vcf.gz
+    jobid: 148
+    reason: Missing output files: data/5/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 148.
+156 of 188 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule tabix_tree_vcf:
+    input: data/4/4/lcr.vcf.gz
+    output: data/4/4/lcr.vcf.gz.tbi
+    jobid: 130
+    reason: Missing output files: data/4/4/lcr.vcf.gz.tbi; Input files updated by another job: data/4/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 130.
+157 of 188 steps (84%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule subset_lcr_vcf:
+    input: data/5/4/lcr.vcf.gz, data/5/4/intervals.tsv, data/5/4/lcr.vcf.gz.tbi
+    output: data/5/4/center.vcf.gz
+    jobid: 152
+    reason: Missing output files: data/5/4/center.vcf.gz; Input files updated by another job: data/5/4/lcr.vcf.gz, data/5/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=5, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:17 2025]
+Finished job 152.
+158 of 188 steps (84%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:17 2025]
+localrule tabix_tree_vcf:
+    input: data/5/3/lcr.vcf.gz
+    output: data/5/3/lcr.vcf.gz.tbi
+    jobid: 151
+    reason: Missing output files: data/5/3/lcr.vcf.gz.tbi; Input files updated by another job: data/5/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 151.
+159 of 188 steps (85%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule subset_lcr_vcf:
+    input: data/5/3/lcr.vcf.gz, data/5/3/intervals.tsv, data/5/3/lcr.vcf.gz.tbi
+    output: data/5/3/center.vcf.gz
+    jobid: 147
+    reason: Missing output files: data/5/3/center.vcf.gz; Input files updated by another job: data/5/3/lcr.vcf.gz.tbi, data/5/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=5, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 147.
+160 of 188 steps (85%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule gzip_tree_vcf:
+    input: data/3/4/lcr.vcf
+    output: data/3/4/lcr.vcf.gz
+    jobid: 101
+    reason: Missing output files: data/3/4/lcr.vcf.gz; Input files updated by another job: data/3/4/lcr.vcf
+    wildcards: folder=data, sim_id=3, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 101.
+161 of 188 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule subset_lcr_vcf:
+    input: data/7/3/lcr.vcf.gz, data/7/3/intervals.tsv, data/7/3/lcr.vcf.gz.tbi
+    output: data/7/3/center.vcf.gz
+    jobid: 199
+    reason: Missing output files: data/7/3/center.vcf.gz; Input files updated by another job: data/7/3/lcr.vcf.gz, data/7/3/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=7, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 199.
+162 of 188 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule subset_lcr_vcf:
+    input: data/8/3/lcr.vcf.gz, data/8/3/intervals.tsv, data/8/3/lcr.vcf.gz.tbi
+    output: data/8/3/center.vcf.gz
+    jobid: 225
+    reason: Missing output files: data/8/3/center.vcf.gz; Input files updated by another job: data/8/3/intervals.tsv, data/8/3/lcr.vcf.gz.tbi, data/8/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=8, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 225.
+163 of 188 steps (87%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule tabix_tree_vcf:
+    input: data/3/4/lcr.vcf.gz
+    output: data/3/4/lcr.vcf.gz.tbi
+    jobid: 104
+    reason: Missing output files: data/3/4/lcr.vcf.gz.tbi; Input files updated by another job: data/3/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=3, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 104.
+164 of 188 steps (87%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule gzip_tree_vcf:
+    input: data/2/0/lcr.vcf
+    output: data/2/0/lcr.vcf.gz
+    jobid: 54
+    reason: Missing output files: data/2/0/lcr.vcf.gz; Input files updated by another job: data/2/0/lcr.vcf
+    wildcards: folder=data, sim_id=2, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:18 2025]
+Finished job 54.
+165 of 188 steps (88%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:18 2025]
+localrule subset_lcr_vcf:
+    input: data/3/4/lcr.vcf.gz, data/3/4/intervals.tsv, data/3/4/lcr.vcf.gz.tbi
+    output: data/3/4/center.vcf.gz
+    jobid: 100
+    reason: Missing output files: data/3/4/center.vcf.gz; Input files updated by another job: data/3/4/lcr.vcf.gz, data/3/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:19 2025]
+Finished job 100.
+166 of 188 steps (88%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:19 2025]
+localrule subset_lcr_vcf:
+    input: data/4/4/lcr.vcf.gz, data/4/4/intervals.tsv, data/4/4/lcr.vcf.gz.tbi
+    output: data/4/4/center.vcf.gz
+    jobid: 126
+    reason: Missing output files: data/4/4/center.vcf.gz; Input files updated by another job: data/4/4/lcr.vcf.gz, data/4/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=4, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:19 2025]
+Finished job 126.
+167 of 188 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:19 2025]
+localrule tree_to_vcf:
+    input: data/0/1/lcr.trees
+    output: data/0/1/lcr.vcf
+    jobid: 9
+    reason: Missing output files: data/0/1/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:19 2025]
+Finished job 9.
+168 of 188 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:19 2025]
+localrule gzip_tree_vcf:
+    input: data/0/1/lcr.vcf
+    output: data/0/1/lcr.vcf.gz
+    jobid: 8
+    reason: Missing output files: data/0/1/lcr.vcf.gz; Input files updated by another job: data/0/1/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:19 2025]
+Finished job 8.
+169 of 188 steps (90%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:19 2025]
+localrule tabix_tree_vcf:
+    input: data/0/1/lcr.vcf.gz
+    output: data/0/1/lcr.vcf.gz.tbi
+    jobid: 11
+    reason: Missing output files: data/0/1/lcr.vcf.gz.tbi; Input files updated by another job: data/0/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:19 2025]
+Finished job 11.
+170 of 188 steps (90%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:19 2025]
+localrule access_tree:
+    input: data/4/simulated.trees, data/4/3/init.txt
+    output: data/4/3/center.tree.pkl, data/4/3/left.tree.pkl, data/4/3/right.tree.pkl, data/4/3/lcr.trees, data/4/3/intervals.tsv
+    jobid: 124
+    reason: Missing output files: data/4/3/intervals.tsv, data/4/3/lcr.trees
+    wildcards: folder=data, sim_id=4, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:20 2025]
+Finished job 124.
+171 of 188 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:20 2025]
+localrule tree_to_vcf:
+    input: data/4/3/lcr.trees
+    output: data/4/3/lcr.vcf
+    jobid: 123
+    reason: Missing output files: data/4/3/lcr.vcf; Input files updated by another job: data/4/3/lcr.trees
+    wildcards: folder=data, sim_id=4, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:21 2025]
+Finished job 123.
+172 of 188 steps (91%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:21 2025]
+localrule gzip_tree_vcf:
+    input: data/4/3/lcr.vcf
+    output: data/4/3/lcr.vcf.gz
+    jobid: 122
+    reason: Missing output files: data/4/3/lcr.vcf.gz; Input files updated by another job: data/4/3/lcr.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=4, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:21 2025]
+Finished job 122.
+173 of 188 steps (92%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:21 2025]
+localrule tabix_tree_vcf:
+    input: data/4/3/lcr.vcf.gz
+    output: data/4/3/lcr.vcf.gz.tbi
+    jobid: 125
+    reason: Missing output files: data/4/3/lcr.vcf.gz.tbi; Input files updated by another job: data/4/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:21 2025]
+Finished job 125.
+174 of 188 steps (93%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:21 2025]
+localrule subset_lcr_vcf:
+    input: data/4/3/lcr.vcf.gz, data/4/3/intervals.tsv, data/4/3/lcr.vcf.gz.tbi
+    output: data/4/3/center.vcf.gz
+    jobid: 121
+    reason: Missing output files: data/4/3/center.vcf.gz; Input files updated by another job: data/4/3/lcr.vcf.gz.tbi, data/4/3/intervals.tsv, data/4/3/lcr.vcf.gz
+    wildcards: folder=data, sim_id=4, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:21 2025]
+Finished job 121.
+175 of 188 steps (93%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:21 2025]
+localrule subset_lcr_vcf:
+    input: data/6/4/lcr.vcf.gz, data/6/4/intervals.tsv, data/6/4/lcr.vcf.gz.tbi
+    output: data/6/4/center.vcf.gz
+    jobid: 178
+    reason: Missing output files: data/6/4/center.vcf.gz; Input files updated by another job: data/6/4/lcr.vcf.gz, data/6/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=6, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:21 2025]
+Finished job 178.
+176 of 188 steps (94%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:21 2025]
+localrule subset_lcr_vcf:
+    input: data/9/4/lcr.vcf.gz, data/9/4/intervals.tsv, data/9/4/lcr.vcf.gz.tbi
+    output: data/9/4/center.vcf.gz
+    jobid: 256
+    reason: Missing output files: data/9/4/center.vcf.gz; Input files updated by another job: data/9/4/lcr.vcf.gz, data/9/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=9, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 256.
+177 of 188 steps (94%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule gzip_tree_vcf:
+    input: data/0/4/lcr.vcf
+    output: data/0/4/lcr.vcf.gz
+    jobid: 23
+    reason: Missing output files: data/0/4/lcr.vcf.gz; Input files updated by another job: data/0/4/lcr.vcf
+    wildcards: folder=data, sim_id=0, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 23.
+178 of 188 steps (95%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule tabix_tree_vcf:
+    input: data/0/4/lcr.vcf.gz
+    output: data/0/4/lcr.vcf.gz.tbi
+    jobid: 26
+    reason: Missing output files: data/0/4/lcr.vcf.gz.tbi; Input files updated by another job: data/0/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 26.
+179 of 188 steps (95%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule subset_lcr_vcf:
+    input: data/0/4/lcr.vcf.gz, data/0/4/intervals.tsv, data/0/4/lcr.vcf.gz.tbi
+    output: data/0/4/center.vcf.gz
+    jobid: 22
+    reason: Missing output files: data/0/4/center.vcf.gz; Input files updated by another job: data/0/4/intervals.tsv, data/0/4/lcr.vcf.gz, data/0/4/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=0, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 22.
+180 of 188 steps (96%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule subset_lcr_vcf:
+    input: data/0/1/lcr.vcf.gz, data/0/1/intervals.tsv, data/0/1/lcr.vcf.gz.tbi
+    output: data/0/1/center.vcf.gz
+    jobid: 7
+    reason: Missing output files: data/0/1/center.vcf.gz; Input files updated by another job: data/0/1/lcr.vcf.gz.tbi, data/0/1/lcr.vcf.gz
+    wildcards: folder=data, sim_id=0, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 7.
+181 of 188 steps (96%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule subset_lcr_vcf:
+    input: data/1/4/lcr.vcf.gz, data/1/4/intervals.tsv, data/1/4/lcr.vcf.gz.tbi
+    output: data/1/4/center.vcf.gz
+    jobid: 48
+    reason: Missing output files: data/1/4/center.vcf.gz; Input files updated by another job: data/1/4/intervals.tsv, data/1/4/lcr.vcf.gz.tbi, data/1/4/lcr.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 48.
+182 of 188 steps (97%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule tabix_tree_vcf:
+    input: data/2/0/lcr.vcf.gz
+    output: data/2/0/lcr.vcf.gz.tbi
+    jobid: 58
+    reason: Missing output files: data/2/0/lcr.vcf.gz.tbi; Input files updated by another job: data/2/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:22 2025]
+Finished job 58.
+183 of 188 steps (97%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:22 2025]
+localrule gzip_tree_vcf:
+    input: data/7/0/lcr.vcf
+    output: data/7/0/lcr.vcf.gz
+    jobid: 184
+    reason: Missing output files: data/7/0/lcr.vcf.gz; Input files updated by another job: data/7/0/lcr.vcf
+    wildcards: folder=data, sim_id=7, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:23 2025]
+Finished job 184.
+184 of 188 steps (98%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:23 2025]
+localrule tabix_tree_vcf:
+    input: data/7/0/lcr.vcf.gz
+    output: data/7/0/lcr.vcf.gz.tbi
+    jobid: 188
+    reason: Missing output files: data/7/0/lcr.vcf.gz.tbi; Input files updated by another job: data/7/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=7, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:23 2025]
+Finished job 188.
+185 of 188 steps (98%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:23 2025]
+localrule subset_lcr_vcf:
+    input: data/7/0/lcr.vcf.gz, data/7/0/intervals.tsv, data/7/0/lcr.vcf.gz.tbi
+    output: data/7/0/center.vcf.gz
+    jobid: 183
+    reason: Missing output files: data/7/0/center.vcf.gz; Input files updated by another job: data/7/0/lcr.vcf.gz, data/7/0/lcr.vcf.gz.tbi, data/7/0/intervals.tsv
+    wildcards: folder=data, sim_id=7, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:23 2025]
+Finished job 183.
+186 of 188 steps (99%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:23 2025]
+localrule subset_lcr_vcf:
+    input: data/2/0/lcr.vcf.gz, data/2/0/intervals.tsv, data/2/0/lcr.vcf.gz.tbi
+    output: data/2/0/center.vcf.gz
+    jobid: 53
+    reason: Missing output files: data/2/0/center.vcf.gz; Input files updated by another job: data/2/0/intervals.tsv, data/2/0/lcr.vcf.gz.tbi, data/2/0/lcr.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:23 2025]
+Finished job 53.
+187 of 188 steps (99%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:41:23 2025]
+localrule all:
+    input: data/0/0/center.vcf.gz, data/0/1/center.vcf.gz, data/0/2/center.vcf.gz, data/0/3/center.vcf.gz, data/0/4/center.vcf.gz, data/1/0/center.vcf.gz, data/1/1/center.vcf.gz, data/1/2/center.vcf.gz, data/1/3/center.vcf.gz, data/1/4/center.vcf.gz, data/2/0/center.vcf.gz, data/2/1/center.vcf.gz, data/2/2/center.vcf.gz, data/2/3/center.vcf.gz, data/2/4/center.vcf.gz, data/3/0/center.vcf.gz, data/3/1/center.vcf.gz, data/3/2/center.vcf.gz, data/3/3/center.vcf.gz, data/3/4/center.vcf.gz, data/4/0/center.vcf.gz, data/4/1/center.vcf.gz, data/4/2/center.vcf.gz, data/4/3/center.vcf.gz, data/4/4/center.vcf.gz, data/5/0/center.vcf.gz, data/5/1/center.vcf.gz, data/5/2/center.vcf.gz, data/5/3/center.vcf.gz, data/5/4/center.vcf.gz, data/6/0/center.vcf.gz, data/6/1/center.vcf.gz, data/6/2/center.vcf.gz, data/6/3/center.vcf.gz, data/6/4/center.vcf.gz, data/7/0/center.vcf.gz, data/7/1/center.vcf.gz, data/7/2/center.vcf.gz, data/7/3/center.vcf.gz, data/7/4/center.vcf.gz, data/8/0/center.vcf.gz, data/8/1/center.vcf.gz, data/8/2/center.vcf.gz, data/8/3/center.vcf.gz, data/8/4/center.vcf.gz, data/9/0/center.vcf.gz, data/9/1/center.vcf.gz, data/9/2/center.vcf.gz, data/9/3/center.vcf.gz, data/9/4/center.vcf.gz
+    output: data/reproduce.yaml
+    jobid: 0
+    reason: Input files updated by another job: data/9/2/center.vcf.gz, data/7/4/center.vcf.gz, data/8/2/center.vcf.gz, data/9/3/center.vcf.gz, data/6/1/center.vcf.gz, data/4/2/center.vcf.gz, data/3/0/center.vcf.gz, data/5/4/center.vcf.gz, data/3/3/center.vcf.gz, data/4/3/center.vcf.gz, data/0/4/center.vcf.gz, data/9/0/center.vcf.gz, data/1/4/center.vcf.gz, data/5/0/center.vcf.gz, data/4/0/center.vcf.gz, data/0/3/center.vcf.gz, data/4/1/center.vcf.gz, data/2/4/center.vcf.gz, data/2/3/center.vcf.gz, data/0/0/center.vcf.gz, data/1/2/center.vcf.gz, data/6/3/center.vcf.gz, data/1/1/center.vcf.gz, data/0/2/center.vcf.gz, data/9/1/center.vcf.gz, data/6/4/center.vcf.gz, data/3/2/center.vcf.gz, data/4/4/center.vcf.gz, data/1/0/center.vcf.gz, data/7/2/center.vcf.gz, data/2/2/center.vcf.gz, data/3/1/center.vcf.gz, data/8/4/center.vcf.gz, data/5/3/center.vcf.gz, data/1/3/center.vcf.gz, data/2/1/center.vcf.gz, data/8/1/center.vcf.gz, data/8/3/center.vcf.gz, data/8/0/center.vcf.gz, data/6/2/center.vcf.gz, data/7/3/center.vcf.gz, data/0/1/center.vcf.gz, data/9/4/center.vcf.gz, data/7/1/center.vcf.gz, data/5/2/center.vcf.gz, data/6/0/center.vcf.gz, data/5/1/center.vcf.gz, data/2/0/center.vcf.gz, data/7/0/center.vcf.gz, data/3/4/center.vcf.gz
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:41:24 2025]
+Finished job 0.
+188 of 188 steps (100%) done
+Complete log: .snakemake/log/2025-02-18T104039.781641.snakemake.log

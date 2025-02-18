@@ -1,0 +1,86 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+gzip_vcf            3
+tabix_vcf           4
+trees_to_vcf        2
+vcf_to_zarr         4
+total              14
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:17:15 2025]
+localrule trees_to_vcf:
+    input: data/2/simulated.trees
+    output: data/2/simulated.vcf
+    jobid: 13
+    reason: Missing output files: data/2/simulated.vcf
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:17:15 2025]
+Finished job 13.
+1 of 14 steps (7%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:17:15 2025]
+localrule gzip_vcf:
+    input: data/0/simulated.vcf
+    output: data/0/simulated.vcf.gz
+    jobid: 2
+    reason: Missing output files: data/0/simulated.vcf.gz; Code has changed since last execution
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:17:15 2025]
+Finished job 2.
+2 of 14 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:17:15 2025]
+localrule tabix_vcf:
+    input: data/0/simulated.vcf.gz
+    output: data/0/simulated.vcf.gz.tbi
+    jobid: 5
+    reason: Missing output files: data/0/simulated.vcf.gz.tbi; Input files updated by another job: data/0/simulated.vcf.gz
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:17:15 2025]
+Finished job 5.
+3 of 14 steps (21%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:17:15 2025]
+localrule vcf_to_zarr:
+    input: data/0/simulated.vcf.gz, data/0/simulated.vcf.gz.tbi
+    output: data/0/simulated.zarr
+    jobid: 1
+    reason: Missing output files: data/0/simulated.zarr; Input files updated by another job: data/0/simulated.vcf.gz.tbi, data/0/simulated.vcf.gz
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+ImproperOutputException in rule vcf_to_zarr in file /mnt/c/Users/sethd/Work/umich/lots-of-trees/rules/vcf.smk, line 33:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule vcf_to_zarr:
+    output: data/0/simulated.zarr
+    wildcards: folder=data, sim_id=0
+    affected files:
+        data/0/simulated.zarr
+Removing output files of failed job vcf_to_zarr since they might be corrupted:
+data/0/simulated.zarr
+Skipped removing non-empty directory data/0/simulated.zarr
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-18T111714.925775.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

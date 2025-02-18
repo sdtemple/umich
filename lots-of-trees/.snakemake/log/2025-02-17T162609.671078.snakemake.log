@@ -1,0 +1,570 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+all                           1
+gzip_vcf                     10
+simulate_mutations           10
+simulate_tree_sequence        6
+tree_to_vcf                  10
+total                        37
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:09 2025]
+localrule simulate_mutations:
+    input: data/7/parameters.tsv, data/7/simulated.trees
+    output: data/7/mutated.trees
+    jobid: 31
+    reason: Missing output files: data/7/mutated.trees
+    wildcards: folder=data, sim_id=7
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:10 2025]
+Finished job 31.
+1 of 37 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:10 2025]
+localrule tree_to_vcf:
+    input: data/7/mutated.trees
+    output: data/7/simulated.vcf
+    jobid: 30
+    reason: Missing output files: data/7/simulated.vcf; Input files updated by another job: data/7/mutated.trees
+    wildcards: folder=data, sim_id=7
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:10 2025]
+Finished job 30.
+2 of 37 steps (5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:10 2025]
+localrule gzip_vcf:
+    input: data/7/simulated.vcf
+    output: data/7/simulated.vcf.gz
+    jobid: 29
+    reason: Missing output files: data/7/simulated.vcf.gz; Input files updated by another job: data/7/simulated.vcf
+    wildcards: folder=data, sim_id=7
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:10 2025]
+Finished job 29.
+3 of 37 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:10 2025]
+localrule simulate_tree_sequence:
+    input: data/1/parameters.tsv
+    output: data/1/simulated.trees
+    jobid: 8
+    reason: Missing output files: data/1/simulated.trees
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:11 2025]
+Finished job 8.
+4 of 37 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:11 2025]
+localrule simulate_mutations:
+    input: data/0/parameters.tsv, data/0/simulated.trees
+    output: data/0/mutated.trees
+    jobid: 3
+    reason: Missing output files: data/0/mutated.trees
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:11 2025]
+Finished job 3.
+5 of 37 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:11 2025]
+localrule tree_to_vcf:
+    input: data/0/mutated.trees
+    output: data/0/simulated.vcf
+    jobid: 2
+    reason: Missing output files: data/0/simulated.vcf; Input files updated by another job: data/0/mutated.trees
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:12 2025]
+Finished job 2.
+6 of 37 steps (16%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:12 2025]
+localrule gzip_vcf:
+    input: data/0/simulated.vcf
+    output: data/0/simulated.vcf.gz
+    jobid: 1
+    reason: Missing output files: data/0/simulated.vcf.gz; Input files updated by another job: data/0/simulated.vcf
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:12 2025]
+Finished job 1.
+7 of 37 steps (19%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:12 2025]
+localrule simulate_mutations:
+    input: data/4/parameters.tsv, data/4/simulated.trees
+    output: data/4/mutated.trees
+    jobid: 19
+    reason: Missing output files: data/4/mutated.trees
+    wildcards: folder=data, sim_id=4
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:12 2025]
+Finished job 19.
+8 of 37 steps (22%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:12 2025]
+localrule tree_to_vcf:
+    input: data/4/mutated.trees
+    output: data/4/simulated.vcf
+    jobid: 18
+    reason: Missing output files: data/4/simulated.vcf; Input files updated by another job: data/4/mutated.trees
+    wildcards: folder=data, sim_id=4
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:12 2025]
+Finished job 18.
+9 of 37 steps (24%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:13 2025]
+localrule gzip_vcf:
+    input: data/4/simulated.vcf
+    output: data/4/simulated.vcf.gz
+    jobid: 17
+    reason: Missing output files: data/4/simulated.vcf.gz; Input files updated by another job: data/4/simulated.vcf
+    wildcards: folder=data, sim_id=4
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:13 2025]
+Finished job 17.
+10 of 37 steps (27%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:13 2025]
+localrule simulate_tree_sequence:
+    input: data/9/parameters.tsv
+    output: data/9/simulated.trees
+    jobid: 40
+    reason: Missing output files: data/9/simulated.trees
+    wildcards: folder=data, sim_id=9
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:13 2025]
+Finished job 40.
+11 of 37 steps (30%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:13 2025]
+localrule simulate_tree_sequence:
+    input: data/5/parameters.tsv
+    output: data/5/simulated.trees
+    jobid: 24
+    reason: Missing output files: data/5/simulated.trees
+    wildcards: folder=data, sim_id=5
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:14 2025]
+Finished job 24.
+12 of 37 steps (32%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:14 2025]
+localrule simulate_mutations:
+    input: data/8/parameters.tsv, data/8/simulated.trees
+    output: data/8/mutated.trees
+    jobid: 35
+    reason: Missing output files: data/8/mutated.trees
+    wildcards: folder=data, sim_id=8
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:14 2025]
+Finished job 35.
+13 of 37 steps (35%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:14 2025]
+localrule tree_to_vcf:
+    input: data/8/mutated.trees
+    output: data/8/simulated.vcf
+    jobid: 34
+    reason: Missing output files: data/8/simulated.vcf; Input files updated by another job: data/8/mutated.trees
+    wildcards: folder=data, sim_id=8
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:14 2025]
+Finished job 34.
+14 of 37 steps (38%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:14 2025]
+localrule gzip_vcf:
+    input: data/8/simulated.vcf
+    output: data/8/simulated.vcf.gz
+    jobid: 33
+    reason: Missing output files: data/8/simulated.vcf.gz; Input files updated by another job: data/8/simulated.vcf
+    wildcards: folder=data, sim_id=8
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:14 2025]
+Finished job 33.
+15 of 37 steps (41%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:14 2025]
+localrule simulate_mutations:
+    input: data/1/parameters.tsv, data/1/simulated.trees
+    output: data/1/mutated.trees
+    jobid: 7
+    reason: Missing output files: data/1/mutated.trees; Input files updated by another job: data/1/simulated.trees
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:15 2025]
+Finished job 7.
+16 of 37 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:15 2025]
+localrule tree_to_vcf:
+    input: data/1/mutated.trees
+    output: data/1/simulated.vcf
+    jobid: 6
+    reason: Missing output files: data/1/simulated.vcf; Input files updated by another job: data/1/mutated.trees
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:15 2025]
+Finished job 6.
+17 of 37 steps (46%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:15 2025]
+localrule gzip_vcf:
+    input: data/1/simulated.vcf
+    output: data/1/simulated.vcf.gz
+    jobid: 5
+    reason: Missing output files: data/1/simulated.vcf.gz; Input files updated by another job: data/1/simulated.vcf
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:15 2025]
+Finished job 5.
+18 of 37 steps (49%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:15 2025]
+localrule simulate_tree_sequence:
+    input: data/2/parameters.tsv
+    output: data/2/simulated.trees
+    jobid: 12
+    reason: Missing output files: data/2/simulated.trees
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:16 2025]
+Finished job 12.
+19 of 37 steps (51%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:16 2025]
+localrule simulate_tree_sequence:
+    input: data/6/parameters.tsv
+    output: data/6/simulated.trees
+    jobid: 28
+    reason: Missing output files: data/6/simulated.trees
+    wildcards: folder=data, sim_id=6
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:16 2025]
+Finished job 28.
+20 of 37 steps (54%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:16 2025]
+localrule simulate_mutations:
+    input: data/9/parameters.tsv, data/9/simulated.trees
+    output: data/9/mutated.trees
+    jobid: 39
+    reason: Missing output files: data/9/mutated.trees; Input files updated by another job: data/9/simulated.trees
+    wildcards: folder=data, sim_id=9
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:17 2025]
+Finished job 39.
+21 of 37 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:17 2025]
+localrule tree_to_vcf:
+    input: data/9/mutated.trees
+    output: data/9/simulated.vcf
+    jobid: 38
+    reason: Missing output files: data/9/simulated.vcf; Input files updated by another job: data/9/mutated.trees
+    wildcards: folder=data, sim_id=9
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:17 2025]
+Finished job 38.
+22 of 37 steps (59%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:17 2025]
+localrule simulate_mutations:
+    input: data/5/parameters.tsv, data/5/simulated.trees
+    output: data/5/mutated.trees
+    jobid: 23
+    reason: Missing output files: data/5/mutated.trees; Input files updated by another job: data/5/simulated.trees
+    wildcards: folder=data, sim_id=5
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:17 2025]
+Finished job 23.
+23 of 37 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:17 2025]
+localrule tree_to_vcf:
+    input: data/5/mutated.trees
+    output: data/5/simulated.vcf
+    jobid: 22
+    reason: Missing output files: data/5/simulated.vcf; Input files updated by another job: data/5/mutated.trees
+    wildcards: folder=data, sim_id=5
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:18 2025]
+Finished job 22.
+24 of 37 steps (65%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:18 2025]
+localrule gzip_vcf:
+    input: data/5/simulated.vcf
+    output: data/5/simulated.vcf.gz
+    jobid: 21
+    reason: Missing output files: data/5/simulated.vcf.gz; Input files updated by another job: data/5/simulated.vcf
+    wildcards: folder=data, sim_id=5
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:18 2025]
+Finished job 21.
+25 of 37 steps (68%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:18 2025]
+localrule simulate_mutations:
+    input: data/6/parameters.tsv, data/6/simulated.trees
+    output: data/6/mutated.trees
+    jobid: 27
+    reason: Missing output files: data/6/mutated.trees; Input files updated by another job: data/6/simulated.trees
+    wildcards: folder=data, sim_id=6
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:18 2025]
+Finished job 27.
+26 of 37 steps (70%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:18 2025]
+localrule gzip_vcf:
+    input: data/9/simulated.vcf
+    output: data/9/simulated.vcf.gz
+    jobid: 37
+    reason: Missing output files: data/9/simulated.vcf.gz; Input files updated by another job: data/9/simulated.vcf
+    wildcards: folder=data, sim_id=9
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:18 2025]
+Finished job 37.
+27 of 37 steps (73%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:18 2025]
+localrule simulate_tree_sequence:
+    input: data/3/parameters.tsv
+    output: data/3/simulated.trees
+    jobid: 16
+    reason: Missing output files: data/3/simulated.trees
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:19 2025]
+Finished job 16.
+28 of 37 steps (76%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:19 2025]
+localrule simulate_mutations:
+    input: data/3/parameters.tsv, data/3/simulated.trees
+    output: data/3/mutated.trees
+    jobid: 15
+    reason: Missing output files: data/3/mutated.trees; Input files updated by another job: data/3/simulated.trees
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:19 2025]
+Finished job 15.
+29 of 37 steps (78%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:19 2025]
+localrule tree_to_vcf:
+    input: data/3/mutated.trees
+    output: data/3/simulated.vcf
+    jobid: 14
+    reason: Missing output files: data/3/simulated.vcf; Input files updated by another job: data/3/mutated.trees
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:20 2025]
+Finished job 14.
+30 of 37 steps (81%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:20 2025]
+localrule gzip_vcf:
+    input: data/3/simulated.vcf
+    output: data/3/simulated.vcf.gz
+    jobid: 13
+    reason: Missing output files: data/3/simulated.vcf.gz; Input files updated by another job: data/3/simulated.vcf
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:20 2025]
+Finished job 13.
+31 of 37 steps (84%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:20 2025]
+localrule simulate_mutations:
+    input: data/2/parameters.tsv, data/2/simulated.trees
+    output: data/2/mutated.trees
+    jobid: 11
+    reason: Missing output files: data/2/mutated.trees; Input files updated by another job: data/2/simulated.trees
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:20 2025]
+Finished job 11.
+32 of 37 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:20 2025]
+localrule tree_to_vcf:
+    input: data/6/mutated.trees
+    output: data/6/simulated.vcf
+    jobid: 26
+    reason: Missing output files: data/6/simulated.vcf; Input files updated by another job: data/6/mutated.trees
+    wildcards: folder=data, sim_id=6
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:20 2025]
+Finished job 26.
+33 of 37 steps (89%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:20 2025]
+localrule tree_to_vcf:
+    input: data/2/mutated.trees
+    output: data/2/simulated.vcf
+    jobid: 10
+    reason: Missing output files: data/2/simulated.vcf; Input files updated by another job: data/2/mutated.trees
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:21 2025]
+Finished job 10.
+34 of 37 steps (92%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:21 2025]
+localrule gzip_vcf:
+    input: data/6/simulated.vcf
+    output: data/6/simulated.vcf.gz
+    jobid: 25
+    reason: Missing output files: data/6/simulated.vcf.gz; Input files updated by another job: data/6/simulated.vcf
+    wildcards: folder=data, sim_id=6
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:21 2025]
+Finished job 25.
+35 of 37 steps (95%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:21 2025]
+localrule gzip_vcf:
+    input: data/2/simulated.vcf
+    output: data/2/simulated.vcf.gz
+    jobid: 9
+    reason: Missing output files: data/2/simulated.vcf.gz; Input files updated by another job: data/2/simulated.vcf
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:21 2025]
+Finished job 9.
+36 of 37 steps (97%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb 17 16:26:21 2025]
+localrule all:
+    input: data/0/simulated.vcf.gz, data/1/simulated.vcf.gz, data/2/simulated.vcf.gz, data/3/simulated.vcf.gz, data/4/simulated.vcf.gz, data/5/simulated.vcf.gz, data/6/simulated.vcf.gz, data/7/simulated.vcf.gz, data/8/simulated.vcf.gz, data/9/simulated.vcf.gz
+    output: data/reproduce.yaml
+    jobid: 0
+    reason: Missing output files: data/reproduce.yaml; Input files updated by another job: data/9/simulated.vcf.gz, data/0/simulated.vcf.gz, data/6/simulated.vcf.gz, data/7/simulated.vcf.gz, data/4/simulated.vcf.gz, data/1/simulated.vcf.gz, data/8/simulated.vcf.gz, data/3/simulated.vcf.gz, data/5/simulated.vcf.gz, data/2/simulated.vcf.gz
+    resources: tmpdir=/tmp
+
+[Mon Feb 17 16:26:21 2025]
+Finished job 0.
+37 of 37 steps (100%) done
+Complete log: .snakemake/log/2025-02-17T162609.671078.snakemake.log

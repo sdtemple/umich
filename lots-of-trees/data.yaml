@@ -1,0 +1,8 @@
+folder: 'data'
+yaml: 'data.yaml'
+
+files:
+  experiments: 'train.tsv'
+
+trim_trees: '2'
+num_trees: '50'

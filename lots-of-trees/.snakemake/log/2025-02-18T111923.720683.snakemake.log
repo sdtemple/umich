@@ -1,0 +1,119 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+gzip_vcf           1
+tabix_vcf          2
+vcf_to_zarr        3
+total              7
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:23 2025]
+localrule vcf_to_zarr:
+    input: data/1/simulated.vcf.gz, data/1/simulated.vcf.gz.tbi
+    output: data/1/simulated.zarr
+    jobid: 6
+    reason: Missing output files: data/1/simulated.zarr
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:19:36 2025]
+Finished job 6.
+1 of 7 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:36 2025]
+localrule tabix_vcf:
+    input: data/3/simulated.vcf.gz
+    output: data/3/simulated.vcf.gz.tbi
+    jobid: 20
+    reason: Missing output files: data/3/simulated.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:19:37 2025]
+Finished job 20.
+2 of 7 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:37 2025]
+localrule gzip_vcf:
+    input: data/2/simulated.vcf
+    output: data/2/simulated.vcf.gz
+    jobid: 12
+    reason: Missing output files: data/2/simulated.vcf.gz; Code has changed since last execution
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:19:37 2025]
+Finished job 12.
+3 of 7 steps (43%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:37 2025]
+localrule tabix_vcf:
+    input: data/2/simulated.vcf.gz
+    output: data/2/simulated.vcf.gz.tbi
+    jobid: 15
+    reason: Missing output files: data/2/simulated.vcf.gz.tbi; Input files updated by another job: data/2/simulated.vcf.gz
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:19:37 2025]
+Finished job 15.
+4 of 7 steps (57%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:37 2025]
+localrule vcf_to_zarr:
+    input: data/3/simulated.vcf.gz, data/3/simulated.vcf.gz.tbi
+    output: data/3/simulated.zarr
+    jobid: 16
+    reason: Missing output files: data/3/simulated.zarr; Input files updated by another job: data/3/simulated.vcf.gz.tbi
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:19:53 2025]
+Finished job 16.
+5 of 7 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:19:53 2025]
+localrule vcf_to_zarr:
+    input: data/2/simulated.vcf.gz, data/2/simulated.vcf.gz.tbi
+    output: data/2/simulated.zarr
+    jobid: 11
+    reason: Missing output files: data/2/simulated.zarr; Input files updated by another job: data/2/simulated.vcf.gz.tbi, data/2/simulated.vcf.gz
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:20:10 2025]
+Finished job 11.
+6 of 7 steps (86%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:20:10 2025]
+localrule all:
+    input: data/0/simulated.zarr, data/1/simulated.zarr, data/2/simulated.zarr, data/3/simulated.zarr
+    output: data/reproduce.yaml
+    jobid: 0
+    reason: Input files updated by another job: data/1/simulated.zarr, data/3/simulated.zarr, data/2/simulated.zarr
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:20:10 2025]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2025-02-18T111923.720683.snakemake.log

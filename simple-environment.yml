@@ -1,4 +1,4 @@
-name: umich
+name: tree-nn
 channels:
   - conda-forge
   - bioconda
@@ -14,13 +14,14 @@ dependencies:
   - tskit
   - msprime
   - stdpopsim
-  - snakemake==7.32.4
+  - snakemake=7
   - jupyter
   - notebook
   - pip
   - r-base
   - r-essentials
   - bcftools
+  - tabix
   - scikit-learn
   - theano
   - tensorflow

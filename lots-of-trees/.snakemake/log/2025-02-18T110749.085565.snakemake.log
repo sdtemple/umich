@@ -1,0 +1,87 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+gzip_vcf            4
+trees_to_vcf        4
+vcf_to_zarr         4
+total              13
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:08:10 2025]
+localrule trees_to_vcf:
+    input: data/0/simulated.trees
+    output: data/0/simulated.vcf
+    jobid: 1007
+    reason: Missing output files: data/0/simulated.vcf
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:08:10 2025]
+Finished job 1007.
+1 of 13 steps (8%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:08:10 2025]
+localrule trees_to_vcf:
+    input: data/3/simulated.trees
+    output: data/3/simulated.vcf
+    jobid: 1016
+    reason: Missing output files: data/3/simulated.vcf
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:08:11 2025]
+Finished job 1016.
+2 of 13 steps (15%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:08:11 2025]
+localrule gzip_vcf:
+    input: data/3/simulated.vcf
+    output: data/3/simulated.vcf.gz
+    jobid: 1015
+    reason: Missing output files: data/3/simulated.vcf.gz; Input files updated by another job: data/3/simulated.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:08:11 2025]
+Finished job 1015.
+3 of 13 steps (23%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:08:11 2025]
+localrule vcf_to_zarr:
+    input: data/3/simulated.vcf.gz
+    output: data/3/simulated.zarr
+    jobid: 1014
+    reason: Missing output files: data/3/simulated.zarr; Input files updated by another job: data/3/simulated.vcf.gz
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:08:11 2025]
+Error in rule vcf_to_zarr:
+    jobid: 1014
+    input: data/3/simulated.vcf.gz
+    output: data/3/simulated.zarr
+    shell:
+        
+        vcf2zarr -o data/3/simulated.zarr data/3/simulated.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-18T110749.085565.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

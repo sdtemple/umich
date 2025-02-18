@@ -1,0 +1,72 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+vcf_to_zarr        3
+total              4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:38:25 2025]
+localrule vcf_to_zarr:
+    input: data/0/simulated.vcf.gz, data/0/simulated.vcf.gz.tbi
+    output: data/0/simulated.vcz
+    jobid: 1
+    reason: Missing output files: data/0/simulated.vcz
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:38:41 2025]
+Finished job 1.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:38:42 2025]
+localrule vcf_to_zarr:
+    input: data/2/simulated.vcf.gz, data/2/simulated.vcf.gz.tbi
+    output: data/2/simulated.vcz
+    jobid: 11
+    reason: Missing output files: data/2/simulated.vcz
+    wildcards: folder=data, sim_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:38:59 2025]
+Finished job 11.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:38:59 2025]
+localrule vcf_to_zarr:
+    input: data/1/simulated.vcf.gz, data/1/simulated.vcf.gz.tbi
+    output: data/1/simulated.vcz
+    jobid: 6
+    reason: Missing output files: data/1/simulated.vcz
+    wildcards: folder=data, sim_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:39:14 2025]
+Finished job 6.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:39:14 2025]
+localrule all:
+    input: data/0/simulated.vcz, data/1/simulated.vcz, data/2/simulated.vcz, data/3/simulated.vcz
+    output: data/reproduce.yaml
+    jobid: 0
+    reason: Missing output files: data/reproduce.yaml; Input files updated by another job: data/0/simulated.vcz, data/1/simulated.vcz, data/2/simulated.vcz
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:39:14 2025]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2025-02-18T113825.169096.snakemake.log

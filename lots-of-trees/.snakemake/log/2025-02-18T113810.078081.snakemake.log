@@ -1,0 +1,30 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+vcf_to_zarr        3
+total              4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:38:10 2025]
+localrule vcf_to_zarr:
+    input: data/0/simulated.vcf.gz, data/0/simulated.vcf.gz.tbi
+    output: data/0/simulated.vcz
+    jobid: 1
+    reason: Missing output files: data/0/simulated.vcz
+    wildcards: folder=data, sim_id=0
+    resources: tmpdir=/tmp
+
+RuleException in rule vcf_to_zarr in file /mnt/c/Users/sethd/Work/umich/lots-of-trees/rules/vcf.smk, line 44:
+AttributeError: 'OutputFiles' object has no attribute 'file', when formatting the following:
+
+        python -m bio2zarr vcf2zarr explode             {input.file}             {wildcards.folder}/{wildcards.sim_id}/simulated.exploded
+        python -m bio2zarr vcf2zarr encode             {wildcards.folder}/{wildcards.sim_id}/simulated.exploded             {output.file}
+        

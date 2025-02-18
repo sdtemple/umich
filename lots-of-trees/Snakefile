@@ -1,0 +1,77 @@
+# Simulate lots of trees for machine learning
+# Seth Temple, sethtem@umich.edu
+
+import os
+
+# Bring in relevant values in YAML file
+yam = str(config['yaml'])
+
+# set up the folder structure
+folder=str(config['folder'])
+if not os.path.exists(folder):
+    os.mkdir(folder)
+
+# load in experiments, set up micro, simname folders
+import pandas as pd
+micro=str(config['files']['experiments'])
+sims = pd.read_csv(micro, sep='\t', dtype=object)
+sims['sim_id'] = sims['sim_id'].astype(int)
+J = sims.shape[0]
+num_trees = int(str(config['num_trees']))
+trim_trees = int(str(config['trim_trees']))
+assert trim_trees >= 1
+for j in range(J):
+    row = sims.loc[j,]
+    # write subfolders
+    if not os.path.exists(folder+'/'+str(row.sim_id)):
+        os.mkdir(folder+'/'+str(row.sim_id))
+    # write subsubfolders
+    for nt in range(num_trees):
+        if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt)):
+            os.mkdir(folder+'/'+str(row.sim_id) + '/' + str(nt))
+        if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt'):
+            g = open(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt', 'w')
+            g.close()
+    # write a parameter file
+    f = open(folder+'/'+str(row.sim_id) + '/parameters.tsv','w')
+    f.write('sim_id\t'); f.write(str(row['sim_id'])); f.write('\n')
+    f.write('sample_size\t'); f.write(str(row['sample_size'])); f.write('\n')
+    f.write('ploidy\t'); f.write(str(row['ploidy'])); f.write('\n')
+    f.write('chromosome_size\t'); f.write(str(row['chromosome_size'])); f.write('\n')
+    f.write('Ne\t'); f.write(str(row['Ne'])); f.write('\n')
+    f.write('demography\t'); f.write(str(row['demography'])); f.write('\n')
+    f.write('recombination_rate\t'); f.write(str(row['recombination_rate'])); f.write('\n')
+    f.write('genetic_map\t'); f.write(str(row['genetic_map'])); f.write('\n')
+    f.write('mutation_rate\t'); f.write(str(row['mutation_rate'])); f.write('\n')
+    f.write('gene_conversion_rate\t'); f.write(str(row['gene_conversion_rate'])); f.write('\n')
+    f.write('mean_gene_conversion_tract\t'); f.write(str(row['mean_gene_conversion_tract'])); f.write('\n')
+    f.close()
+    # to read in these details in later rules
+sims = sims.set_index("sim_id", drop=False)
+
+# You can organize your code with additional rules in other files
+# Best practice is to create the subfolder `rules/`
+# And define these as *.smk for snakemake file type
+include: 'rules/trees.smk'
+include: 'rules/vcf.smk'
+
+rule all:
+    input:
+        # make windows of trees
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/' + str(nt) + '/center.vcf.gz' 
+        #     for j in range(J) 
+        #     for nt in range(num_trees)],
+        # tsinfer not working with zarr files
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/simulated.vcz' for j in range(J)],
+        # implement tsinfer
+        [folder + '/' + str(sims.loc[j].sim_id) + '/inferred.trees' for j in range(J)],
+        # eventually work towards this
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/features.tsv' for j in range(J)],
+    output:
+        yaml=folder + '/reproduce.yaml',
+    params:
+        yaml=yam,
+    shell:
+        """
+        cp {params.yaml} {output.yaml}
+        """

@@ -1,0 +1,42 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count
+------------  -------
+all                 1
+gzip_vcf            3
+trees_to_vcf        2
+vcf_to_zarr         4
+total              10
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 11:09:57 2025]
+localrule vcf_to_zarr:
+    input: data/3/simulated.vcf.gz
+    output: data/3/simulated.zarr
+    jobid: 1014
+    reason: Missing output files: data/3/simulated.zarr
+    wildcards: folder=data, sim_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 11:09:57 2025]
+Error in rule vcf_to_zarr:
+    jobid: 1014
+    input: data/3/simulated.vcf.gz
+    output: data/3/simulated.zarr
+    shell:
+        
+        python -m bio2zarr vcf2zarr -o data/3/simulated.zarr data/3/simulated.vcf.gz
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-18T110936.688713.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

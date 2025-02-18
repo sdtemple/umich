@@ -1,0 +1,97 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+access_tree          17
+all                   1
+gzip_tree_vcf        47
+subset_lcr_vcf       50
+tabix_tree_vcf       49
+tree_to_vcf          38
+total               202
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 09:21:48 2025]
+localrule tree_to_vcf:
+    input: data/4/1/lcr.trees
+    output: data/4/1/lcr.vcf
+    jobid: 113
+    reason: Missing output files: data/4/1/lcr.vcf
+    wildcards: folder=data, sim_id=4, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 09:21:48 2025]
+Finished job 113.
+1 of 202 steps (0.5%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 09:21:48 2025]
+localrule gzip_tree_vcf:
+    input: data/4/1/lcr.vcf
+    output: data/4/1/lcr.vcf.gz
+    jobid: 112
+    reason: Missing output files: data/4/1/lcr.vcf.gz; Input files updated by another job: data/4/1/lcr.vcf; Code has changed since last execution
+    wildcards: folder=data, sim_id=4, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 09:21:48 2025]
+Finished job 112.
+2 of 202 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 09:21:48 2025]
+localrule access_tree:
+    input: data/6/simulated.trees, data/6/1/init.txt
+    output: data/6/1/center.tree.pkl, data/6/1/left.tree.pkl, data/6/1/right.tree.pkl, data/6/1/lcr.trees, data/6/1/intervals.tsv
+    jobid: 166
+    reason: Missing output files: data/6/1/lcr.trees, data/6/1/intervals.tsv
+    wildcards: folder=data, sim_id=6, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 09:21:49 2025]
+Finished job 166.
+3 of 202 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 09:21:49 2025]
+localrule subset_lcr_vcf:
+    input: data/2/4/lcr.vcf.gz, data/2/4/intervals.tsv, data/2/4/lcr.vcf.gz.tbi
+    output: data/2/4/left.vcf.gz, data/2/4/center.vcf.gz, data/2/4/right.vcf.gz
+    jobid: 74
+    reason: Missing output files: data/2/4/left.vcf.gz
+    wildcards: folder=data, sim_id=2, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 09:21:49 2025]
+Error in rule subset_lcr_vcf:
+    jobid: 74
+    input: data/2/4/lcr.vcf.gz, data/2/4/intervals.tsv, data/2/4/lcr.vcf.gz.tbi
+    output: data/2/4/left.vcf.gz, data/2/4/center.vcf.gz, data/2/4/right.vcf.gz
+    shell:
+        
+        left_start=$(cut -f 2 data/2/4/intervals.tsv | head -n 2 | tail -n 1)
+        center_start=$(cut -f 3 data/2/4/intervals.tsv | head -n 2 | tail -n 1)
+        right_start=$(cut -f 4 data/2/4/intervals.tsv | head -n 2 | tail -n 1)
+        left_end=$(cut -f 2 data/2/4/intervals.tsv | tail -n 1)
+        center_end=$(cut -f 3 data/2/4/intervals.tsv | tail -n 1)
+        right_end=$(cut -f 4 data/2/4/intervals.tsv | tail -n 1)
+        bcftools view -Oz -o data/2/4/left.vcf.gz             -r 1:$left_start-$left_end
+        bcftools view -Oz -o data/2/4/center.vcf.gz             -r 1:$center_start-$center_end
+        bcftools view -Oz -o data/2/4/right.vcf.gz             -r 1:$right_start-$right_end
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-18T092144.467662.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,156 @@
+host: DerLaptop
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+access_tree          15
+all                   1
+gzip_tree_vcf        46
+subset_lcr_vcf       50
+tabix_tree_vcf       48
+tree_to_vcf          35
+total               195
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:14 2025]
+localrule tree_to_vcf:
+    input: data/8/2/lcr.trees
+    output: data/8/2/lcr.vcf
+    jobid: 222
+    reason: Missing output files: data/8/2/lcr.vcf
+    wildcards: folder=data, sim_id=8, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:15 2025]
+Finished job 222.
+1 of 195 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:15 2025]
+localrule tree_to_vcf:
+    input: data/9/2/lcr.trees
+    output: data/9/2/lcr.vcf
+    jobid: 248
+    reason: Missing output files: data/9/2/lcr.vcf
+    wildcards: folder=data, sim_id=9, tree_id=2
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:15 2025]
+Finished job 248.
+2 of 195 steps (1%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:15 2025]
+localrule tree_to_vcf:
+    input: data/3/1/lcr.trees
+    output: data/3/1/lcr.vcf
+    jobid: 87
+    reason: Missing output files: data/3/1/lcr.vcf
+    wildcards: folder=data, sim_id=3, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:15 2025]
+Finished job 87.
+3 of 195 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:15 2025]
+localrule access_tree:
+    input: data/7/simulated.trees, data/7/3/init.txt
+    output: data/7/3/center.tree.pkl, data/7/3/left.tree.pkl, data/7/3/right.tree.pkl, data/7/3/lcr.trees, data/7/3/intervals.tsv
+    jobid: 202
+    reason: Missing output files: data/7/3/intervals.tsv, data/7/3/lcr.trees
+    wildcards: folder=data, sim_id=7, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:16 2025]
+Finished job 202.
+4 of 195 steps (2%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:16 2025]
+localrule tree_to_vcf:
+    input: data/6/4/lcr.trees
+    output: data/6/4/lcr.vcf
+    jobid: 180
+    reason: Missing output files: data/6/4/lcr.vcf
+    wildcards: folder=data, sim_id=6, tree_id=4
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:17 2025]
+Finished job 180.
+5 of 195 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:17 2025]
+localrule tabix_tree_vcf:
+    input: data/4/1/lcr.vcf.gz
+    output: data/4/1/lcr.vcf.gz.tbi
+    jobid: 115
+    reason: Missing output files: data/4/1/lcr.vcf.gz.tbi
+    wildcards: folder=data, sim_id=4, tree_id=1
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:17 2025]
+Finished job 115.
+6 of 195 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:17 2025]
+localrule access_tree:
+    input: data/5/simulated.trees, data/5/0/init.txt
+    output: data/5/0/center.tree.pkl, data/5/0/left.tree.pkl, data/5/0/right.tree.pkl, data/5/0/lcr.trees, data/5/0/intervals.tsv
+    jobid: 134
+    reason: Missing output files: data/5/0/intervals.tsv, data/5/0/lcr.trees
+    wildcards: folder=data, sim_id=5, tree_id=0
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:18 2025]
+Finished job 134.
+7 of 195 steps (4%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Feb 18 10:39:18 2025]
+localrule subset_lcr_vcf:
+    input: data/1/3/lcr.vcf.gz, data/1/3/intervals.tsv, data/1/3/lcr.vcf.gz.tbi
+    output: data/1/3/center.vcf.gz
+    jobid: 43
+    reason: Missing output files: data/1/3/center.vcf.gz
+    wildcards: folder=data, sim_id=1, tree_id=3
+    resources: tmpdir=/tmp
+
+[Tue Feb 18 10:39:18 2025]
+Error in rule subset_lcr_vcf:
+    jobid: 43
+    input: data/1/3/lcr.vcf.gz, data/1/3/intervals.tsv, data/1/3/lcr.vcf.gz.tbi
+    output: data/1/3/center.vcf.gz
+    shell:
+        
+        left_start=$(cut -f 2 data/1/3/intervals.tsv | head -n 2 | tail -n 1)
+        center_start=$(cut -f 3 data/1/3/intervals.tsv | head -n 2 | tail -n 1)
+        right_start=$(cut -f 4 data/1/3/intervals.tsv | head -n 2 | tail -n 1)
+        left_end=$(cut -f 2 data/1/3/intervals.tsv | tail -n 1)
+        center_end=$(cut -f 3 data/1/3/intervals.tsv | tail -n 1)
+        right_end=$(cut -f 4 data/1/3/intervals.tsv | tail -n 1)
+        bcftools view -Oz -o data/1/3/center.vcf.gz             -r 1:${center_start}-${center_end}
+
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-02-18T103911.995496.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
