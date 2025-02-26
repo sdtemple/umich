@@ -16,11 +16,11 @@ rule format_trees_data:
     input:
         file = '{folder}/{sim_id}/simulated.trees'
     output:
-        # gt = '{folder}/{sim_id}/genotypes1.csv',
-        # tp = '{folder}/{sim_id}/topology1.npy',
-        gtn = '{folder}/{sim_id}/genotypes1.next.csv',
-        tpn = '{folder}/{sim_id}/topology1.next.npy',
-        tpc = '{folder}/{sim_id}/topology1.current.npy',
+        # gt = '{folder}/{sim_id}/genotypes/genotypes1.csv',
+        # tp = '{folder}/{sim_id}/topologies/topology1.npy',
+        gtn = '{folder}/{sim_id}/genotypes/genotypes1.next.csv',
+        tpn = '{folder}/{sim_id}/topologies/topology1.next.npy',
+        tpc = '{folder}/{sim_id}/topologies/topology1.current.npy',
     params:
         num_markers = num_markers,
     shell:

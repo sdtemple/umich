@@ -70,7 +70,7 @@ for i in range(num_trees-1):
             sys.exit(0)
         sites = sites[first_index:,]
         sub_matrix = full_matrix[first_index:(first_index+num_markers)]
-        np.savetxt(output_prefix + '/genotypes' + str(itr) + '.csv', 
+        np.savetxt(output_prefix + '/genotypes/genotypes' + str(itr) + '.next.csv', 
                    sub_matrix, 
                    delimiter=',',
                    fmt='%.0f')
@@ -81,7 +81,7 @@ for i in range(num_trees-1):
         parents = [current_tree.get_parent(n) for n in nodes]
         times = [trees.get_time(p) for p in parents]
         current_rank_topology[nodes,parents] = times
-        np.save(output_prefix + '/topology' + str(itr) + '.current.npy', 
+        np.save(output_prefix + '/topologies/topology' + str(itr) + '.current.npy', 
                 current_rank_topology)
         # for single tree get the topology
         root = next_tree.get_root()
@@ -89,8 +89,8 @@ for i in range(num_trees-1):
         parents = [next_tree.get_parent(n) for n in nodes]
         times = [trees.get_time(p) for p in parents]
         next_rank_topology[nodes,parents] = times
-        np.save(output_prefix + '/topology' + str(itr) + '.next.npy', 
-                current_rank_topology)
+        np.save(output_prefix + '/topologies/topology' + str(itr) + '.next.npy', 
+                next_rank_topology)
     else:
         pass
 
@@ -116,11 +116,11 @@ for i in range(num_trees-1):
 #             sys.exit(0)
 #         sites = sites[first_index:,]
 #         sub_matrix = full_matrix[first_index:(first_index+num_markers)]
-#         np.savetxt(output_prefix + '/genotypes' + str(itr) + '.csv', 
+#         np.savetxt(output_prefix + '/genotypes/genotypes' + str(itr) + '.csv', 
 #                    sub_matrix, 
 #                    delimiter=',',
 #                    fmt='%.0f')
-#         # np.save(output_prefix + '/genotypes' + str(itr) + '.npy', 
+#         # np.save(output_prefix + '/genotypes/genotypes' + str(itr) + '.npy', 
 #         #         sub_matrix)
 
 #         # for single tree get the topology
@@ -129,11 +129,11 @@ for i in range(num_trees-1):
 #         parents = [tree.get_parent(n) for n in nodes]
 #         times = [trees.get_time(p) for p in parents]
 #         sparse_rank_topology[nodes,parents] = times
-#         # np.savetxt(output_prefix + '/topology' + str(itr) + '.csv', 
+#         # np.savetxt(output_prefix + '/topologies/topology' + str(itr) + '.csv', 
 #         #            sparse_rank_topology, 
 #         #            delimiter=','
 #         #            )
-#         np.save(output_prefix + '/topology' + str(itr) + '.npy', 
+#         np.save(output_prefix + '/topologies/topology' + str(itr) + '.npy', 
 #                 sparse_rank_topology)
 #     else:
 #         pass

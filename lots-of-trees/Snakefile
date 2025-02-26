@@ -26,6 +26,10 @@ for j in range(J):
     # write subfolders
     if not os.path.exists(folder+'/'+str(row.sim_id)):
         os.mkdir(folder+'/'+str(row.sim_id))
+    if not os.path.exists(folder+'/'+str(row.sim_id) + '/topologies'):
+        os.mkdir(folder+'/'+str(row.sim_id) + '/topologies')
+    if not os.path.exists(folder+'/'+str(row.sim_id) + '/genotypes'):
+        os.mkdir(folder+'/'+str(row.sim_id) + '/genotypes')
     # # write subsubfolders
     # for nt in range(num_trees):
     #     if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt)):
@@ -61,12 +65,12 @@ include: 'rules/vcf.smk'
 rule all:
     input:
         # gather lots of tree data
-        [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes1.next.csv' for j in range(J)],
-        [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.next.npy' for j in range(J)],
-        [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.current.npy' for j in range(J)],
+        [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes/genotypes1.next.csv' for j in range(J)],
+        [folder + '/' + str(sims.loc[j].sim_id) + '/topologies/topology1.next.npy' for j in range(J)],
+        [folder + '/' + str(sims.loc[j].sim_id) + '/topologies/topology1.current.npy' for j in range(J)],
         # gather lots of tree data
-        # [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes1.csv' for j in range(J)],
-        # [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.npy' for j in range(J)],
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes/genotypes1.csv' for j in range(J)],
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/topologies/topology1.npy' for j in range(J)],
         # # make windows of trees
         # [folder + '/' + str(sims.loc[j].sim_id) + '/' + str(nt) + '/center.vcf.gz' 
         #     for j in range(J) 
