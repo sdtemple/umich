@@ -4,5 +4,9 @@ yaml: 'data.yaml'
 files:
   experiments: 'train.tsv'
 
-trim_trees: '2'
-num_trees: '50'
+# number of markers in genotype matrix
+num_markers: '2'
+
+# old parameters
+trim_trees: '2' # don't analyze these trees at end of chromosomes
+num_trees: '5' # only analyze these first trees processed serially

@@ -1,0 +1,35 @@
+name: hoodriver
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.12
+  - numpy==2.1.3
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - networkx
+  - tskit
+  - tszip
+  - zarr
+  - msprime>=1.3.3
+  - stdpopsim
+  - snakemake>=8.28
+  - jupyter
+  - notebook
+  - pip
+  - r-base
+  - r-essentials
+  - bioconductor-SNPRelate
+  - bioconductor-gdsfmt
+  - bioconductor-SeqArray
+  - bioconductor-Rsamtools
+  - bcftools
+  - tabix
+  - scikit-learn
+  - pytorch
+  - jax
+  - numba
+  - statsmodels

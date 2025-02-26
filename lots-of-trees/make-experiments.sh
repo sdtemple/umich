@@ -1,8 +1,8 @@
 # global parameters for all python
 # in yaml file you should update your file name
 filename=train.tsv
-samplesize=50
-chrsize=1000000
+samplesize=10
+chrsize=100000
 numsims=2
 
 # remove if existing

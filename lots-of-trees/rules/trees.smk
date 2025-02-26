@@ -1,6 +1,6 @@
 # These rules handle tree sequence files
 
-rule simulate_tree_sequence:
+rule simulate_trees:
     input:
         file = '{folder}/{sim_id}/parameters.tsv'
     output:
@@ -12,7 +12,26 @@ rule simulate_tree_sequence:
             --output_file {output.file}
         '''
 
-rule access_tree:
+rule format_trees_data:
+    input:
+        file = '{folder}/{sim_id}/simulated.trees'
+    output:
+        # gt = '{folder}/{sim_id}/genotypes1.csv',
+        # tp = '{folder}/{sim_id}/topology1.npy',
+        gtn = '{folder}/{sim_id}/genotypes1.next.csv',
+        tpn = '{folder}/{sim_id}/topology1.next.npy',
+        tpc = '{folder}/{sim_id}/topology1.current.npy',
+    params:
+        num_markers = num_markers,
+    shell:
+        '''
+        python scripts/format-trees-data.py \
+            --input_file {input.file} \
+            --output_prefix {wildcards.folder}/{wildcards.sim_id} \
+            --num_markers {params.num_markers}
+        '''
+
+rule access_trees:
     input:
         tree_sequence = '{folder}/{sim_id}/simulated.trees',
         files = '{folder}/{sim_id}/{tree_id}/init.txt'
@@ -26,7 +45,7 @@ rule access_tree:
         trim_trees = trim_trees,
     shell:
         '''
-        python scripts/access-tree.py \
+        python scripts/access-trees.py \
             --input_file {input.tree_sequence} \
             --output_folder {wildcards.folder}/{wildcards.sim_id}/{wildcards.tree_id} \
             --index_tree {wildcards.tree_id} \
@@ -46,6 +65,7 @@ rule tsinfer:
         '''
 
 # eventually do a command line
+# cli documentation buggy
 # rule tsinfer:
 #     input:
 #     output:

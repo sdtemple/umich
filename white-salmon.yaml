@@ -1,0 +1,19 @@
+name: whitesalmon
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python>=3.10
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - seaborn
+  - snakemake>=8.28
+  - jupyter
+  - notebook
+  - pip
+  - scikit-learn
+  - statsmodels
+  - numba

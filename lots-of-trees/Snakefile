@@ -18,6 +18,7 @@ sims = pd.read_csv(micro, sep='\t', dtype=object)
 sims['sim_id'] = sims['sim_id'].astype(int)
 J = sims.shape[0]
 num_trees = int(str(config['num_trees']))
+num_markers = int(str(config['num_markers']))
 trim_trees = int(str(config['trim_trees']))
 assert trim_trees >= 1
 for j in range(J):
@@ -25,13 +26,13 @@ for j in range(J):
     # write subfolders
     if not os.path.exists(folder+'/'+str(row.sim_id)):
         os.mkdir(folder+'/'+str(row.sim_id))
-    # write subsubfolders
-    for nt in range(num_trees):
-        if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt)):
-            os.mkdir(folder+'/'+str(row.sim_id) + '/' + str(nt))
-        if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt'):
-            g = open(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt', 'w')
-            g.close()
+    # # write subsubfolders
+    # for nt in range(num_trees):
+    #     if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt)):
+    #         os.mkdir(folder+'/'+str(row.sim_id) + '/' + str(nt))
+    #     if not os.path.exists(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt'):
+    #         g = open(folder+'/'+str(row.sim_id)+'/' + str(nt) + '/init.txt', 'w')
+    #         g.close()
     # write a parameter file
     f = open(folder+'/'+str(row.sim_id) + '/parameters.tsv','w')
     f.write('sim_id\t'); f.write(str(row['sim_id'])); f.write('\n')
@@ -45,6 +46,8 @@ for j in range(J):
     f.write('mutation_rate\t'); f.write(str(row['mutation_rate'])); f.write('\n')
     f.write('gene_conversion_rate\t'); f.write(str(row['gene_conversion_rate'])); f.write('\n')
     f.write('mean_gene_conversion_tract\t'); f.write(str(row['mean_gene_conversion_tract'])); f.write('\n')
+    f.write('ancestry_random_seed\t'); f.write(str(row['ancestry_random_seed'])); f.write('\n')
+    f.write('mutation_random_seed\t'); f.write(str(row['mutation_random_seed'])); f.write('\n')
     f.close()
     # to read in these details in later rules
 sims = sims.set_index("sim_id", drop=False)
@@ -57,15 +60,22 @@ include: 'rules/vcf.smk'
 
 rule all:
     input:
-        # make windows of trees
+        # gather lots of tree data
+        [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes1.next.csv' for j in range(J)],
+        [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.next.npy' for j in range(J)],
+        [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.current.npy' for j in range(J)],
+        # gather lots of tree data
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes1.csv' for j in range(J)],
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/topology1.npy' for j in range(J)],
+        # # make windows of trees
         # [folder + '/' + str(sims.loc[j].sim_id) + '/' + str(nt) + '/center.vcf.gz' 
         #     for j in range(J) 
         #     for nt in range(num_trees)],
-        # tsinfer not working with zarr files
+        # # tsinfer not working with zarr files
         # [folder + '/' + str(sims.loc[j].sim_id) + '/simulated.vcz' for j in range(J)],
-        # implement tsinfer
-        [folder + '/' + str(sims.loc[j].sim_id) + '/inferred.trees' for j in range(J)],
-        # eventually work towards this
+        # # implement tsinfer
+        # [folder + '/' + str(sims.loc[j].sim_id) + '/inferred.trees' for j in range(J)],
+        # # eventually work towards this
         # [folder + '/' + str(sims.loc[j].sim_id) + '/features.tsv' for j in range(J)],
     output:
         yaml=folder + '/reproduce.yaml',

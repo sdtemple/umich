@@ -44,21 +44,29 @@ line = f.readline().strip().split('\t')
 gene_conversion_rate = float(line[1])
 line = f.readline().strip().split('\t')
 mean_gene_conversion_tract = int(line[1])
+line = f.readline().strip().split('\t')
+seed1 = int(float(line[1]))
+line = f.readline().strip().split('\t')
+seed2 = int(float(line[1]))
+
+# genetic map flexibility not implemented
+# demography flexibility not implemented
 
 # Simulate a tree sequence
 ts = msprime.sim_ancestry(
   samples = sample_size,
   ploidy=int(ploidy),
   population_size = Ne,
-#  demography = demography,
+  # demography = demography,
   model=[
-    # msprime.DiscreteTimeWrightFisher(duration=int(float(dftw_duration))),
     msprime.StandardCoalescent(),
   ],
   recombination_rate=recombination_rate,
+  # genetic_map=genetic_map,
   sequence_length=chromosome_size,
   gene_conversion_rate=gene_conversion_rate,
   gene_conversion_tract_length=mean_gene_conversion_tract,
+  random_seed=seed1,
 )
 
 # root check
@@ -67,6 +75,10 @@ if roots > 1:
     raise ValueError('More than 1 root')
 
 # add neutral mutations
-mut_ts = msprime.sim_mutations(ts, rate=mutation_rate, keep=True)
+mut_ts = msprime.sim_mutations(ts, 
+                               rate=mutation_rate, 
+                               keep=True,
+                               random_seed=seed2,
+                               )
 
 mut_ts.dump(output_file)

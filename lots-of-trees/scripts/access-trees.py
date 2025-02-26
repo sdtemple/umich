@@ -59,7 +59,6 @@ with open(output_folder + '/intervals.tsv','w') as f:
     f.write(str(center_end)); f.write('\t')
     f.write(str(right_end)); f.write('\n')
 
-
 # Open a file in binary write mode
 # Save the left, center, right trees as dicts of dict
 # Save using pickle native python object

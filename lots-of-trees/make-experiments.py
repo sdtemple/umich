@@ -1,4 +1,5 @@
 import argparse
+from random import randint
 
 # Set up the argument parser
 parser = argparse.ArgumentParser(description='Write parameters file for popgen simulations.')
@@ -26,10 +27,10 @@ parser.add_argument('--ploidy',
                     help='Ploidy number')
 parser.add_argument('--demography', 
                     type=str, 
-                    default="null", 
+                    default="nan", 
                     help='Demographic model')
 parser.add_argument('--Ne', 
-                    type=int, 
+                    type=float, 
                     default=10000, 
                     help='Effective population size')
 parser.add_argument('--mutation_rate', 
@@ -45,19 +46,19 @@ parser.add_argument('--gene_conversion_rate',
                     default=0., 
                     help='Input simulation method file output')
 parser.add_argument('--mean_gene_conversion_tract', 
-                    type=int, 
+                    type=float, 
                     default=450, 
                     help='Average base pair length of gene conversion')
 parser.add_argument('--genetic_map', 
                     type=str, 
-                    default="null", 
+                    default="nan", 
                     help='Genetic recombination map')
 parser.add_argument('--sim_id_start', 
-                    type=int, 
+                    type=float, 
                     default=0, 
                     help='Iterator to start at for IDs')
 parser.add_argument('--header', 
-                    type=int, 
+                    type=float, 
                     default=1, 
                     help='There is a header if not 0')
 
@@ -74,12 +75,16 @@ gene_conversion_rate = args.gene_conversion_rate
 genetic_map = args.genetic_map
 demography = args.demography
 Ne = args.Ne
+Ne = int(Ne)
 mean_gene_conversion_tract = args.mean_gene_conversion_tract
+mean_gene_conversion_tract = int(mean_gene_conversion_tract)
 sim_id_start = args.sim_id_start
+sim_id_start = int(sim_id_start)
+header = int(args.header)
 
 f = open(output_file,'w')
 
-if abs(args.header) > 0:
+if abs(header) > 0:
     f.write('sim_id\t')
     f.write('sample_size\t')
     f.write('ploidy\t')
@@ -90,7 +95,9 @@ if abs(args.header) > 0:
     f.write('genetic_map\t')
     f.write('mutation_rate\t')
     f.write('gene_conversion_rate\t')
-    f.write('mean_gene_conversion_tract\n')
+    f.write('mean_gene_conversion_tract\t')
+    f.write('ancestry_random_seed\t')
+    f.write('mutation_random_seed\n')
 
 for n in range(sim_id_start, num_sims + sim_id_start):
     f.write(str(n)); f.write('\t')
@@ -103,6 +110,10 @@ for n in range(sim_id_start, num_sims + sim_id_start):
     f.write(str(genetic_map)); f.write('\t')
     f.write(str(mutation_rate)); f.write('\t')
     f.write(str(gene_conversion_rate)); f.write('\t')
-    f.write(str(mean_gene_conversion_tract)); f.write('\n')
+    f.write(str(mean_gene_conversion_tract)); f.write('\t')
+    # these are hard coded upper limits on random number generation
+    # the highest possible with msprime
+    f.write(str(randint(1,int(2**32-1)))); f.write('\t')
+    f.write(str(randint(1,int(2**32-1)))); f.write('\n')
 
 f.close()
