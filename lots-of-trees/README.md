@@ -1,4 +1,4 @@
-## This repository provides a workflow to simulate data for tree-based machine learning
+# Simulate data for tree-based machine learning
 
 Current status
 ---
@@ -53,4 +53,5 @@ Author
 ---
 
 Seth Temple
+
 sethtem@umich.edu
