@@ -64,6 +64,8 @@ include: 'rules/vcf.smk'
 
 rule all:
     input:
+        # gather lots of features
+        [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes/features.csv' for j in range(J)],
         # gather lots of tree data
         [folder + '/' + str(sims.loc[j].sim_id) + '/genotypes/genotypes1.next.csv' for j in range(J)],
         [folder + '/' + str(sims.loc[j].sim_id) + '/topologies/topology1.next.npy' for j in range(J)],

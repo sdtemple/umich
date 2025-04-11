@@ -8,7 +8,6 @@ import scipy.sparse as sp
 import networkx as nx
 
 def make_adjacency_matrix_from_tree(tree, 
-                                    sample_number, 
                                     upper=True, 
                                     sparse=False):
     '''Make an adjacency matrix from a bifurcating tree
@@ -16,7 +15,6 @@ def make_adjacency_matrix_from_tree(tree,
     Parameters
     ----------
     tree : tskit.Tree
-    sample_number : int
     upper : bool
         Only upper triangular if True
     sparse : bool
@@ -27,6 +25,7 @@ def make_adjacency_matrix_from_tree(tree,
     numpy.array(dtype=np.int32)
      (# of nodes) x (# of nodes) adjacency matrix
     '''
+    sample_number = tree.num_samples()
     node_number = 2 * sample_number - 1
     if sparse:
         adjacency_matrix = sp.eye(node_number, dtype=np.int32, format='lil')
